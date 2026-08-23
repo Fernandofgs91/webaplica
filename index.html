@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboCode - Aprenda Robótica</title>
+    <!-- Ícones e Fontes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- Menu Superior -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <i class="fa-solid fa-robot"></i> RoboCode
+        </a>
+        <ul class="nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">O Curso</a></li>
+            <li><a href="#atividades">Atividades</a></li>
+            <li><a href="#atividades" class="btn-nav">Acessar Aulas</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <!-- Hero / Banner Principal -->
+        <section id="inicio" class="hero">
+            <div class="hero-text">
+                <h1>Aprenda robótica e programação <span>na prática!</span></h1>
+                <p>O RoboCode é o seu curso interativo para dominar lógica de programação utilizando simulações
+                    incríveis no Tinkercad e placas Arduino.</p>
+                <a href="#atividades" class="btn-nav"
+                    style="display: inline-block; padding: 15px 30px; font-size: 16px;">Começar minha jornada <i
+                        class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></a>
+            </div>
+            <div class="hero-image">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+        </section>
+
+        <!-- Apresentação do Curso -->
+        <section id="sobre" class="sobre-curso">
+            <h2 class="section-title">Como funciona o projeto?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>100% Prático</h3>
+                    <p>Você não vai ficar só na teoria. Cada atividade foi desenhada para você colocar a mão na massa
+                        através de simulações.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-wrench"></i>
+                    <h3>Uso do Tinkercad</h3>
+                    <p>Crie, monte e simule seus circuitos eletrônicos diretamente pelo navegador sem precisar comprar
+                        peças físicas agora.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-list-check"></i>
+                    <h3>Passo a Passo</h3>
+                    <p>Videoaulas explicativas, apostilas em PDF completas e questionários para você fixar tudo o que
+                        aprendeu.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trilha de Atividades (Menu para as outras páginas) -->
+        <section id="atividades" class="atividades">
+            <h2 class="section-title" style="text-align: center;">Trilha de Aprendizagem</h2>
+            <div class="cards-grid">
+
+                <!-- Card Atividade 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon led">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3>Atividade 01: LED</h3>
+                    </div>
+                    <p>O clássico "Hello World" da eletrônica. Aprenda a programar as portas digitais do Arduino para
+                        acender um LED.</p>
+                    <a href="atividade1.html" class="btn-secundario">Acessar Aula <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card Atividade 2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon botao">
+                            <i class="fa-solid fa-toggle-on"></i>
+                        </div>
+                        <h3>Atividade 02: Botão</h3>
+                    </div>
+                    <p>Introduza interatividade ao seu projeto. Utilize estruturas de condição (IF/ELSE) para ler o
+                        estado de um botão.</p>
+                    <a href="atividade2.html" class="btn-secundario">Acessar Aula <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card Atividade 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon sensor">
+                            <i class="fa-solid fa-wifi"></i>
+                        </div>
+                        <h3>Atividade 03: Sensor</h3>
+                    </div>
+                    <p>Deixe seu robô inteligente. Aprenda a ler dados de um sensor ultrassônico para medir distâncias e
+                        tomar decisões automáticas.</p>
+                    <a href="atividade3.html" class="btn-secundario">Acessar Aula <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card Atividade Futura (Bloqueada/Em Breve) -->
+                <div class="card" style="opacity: 0.7; background: #f8f9fa;">
+                    <div class="card-header">
+                        <div class="card-icon" style="background-color: #95a5a6;">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h3>Atividade 04: Motores</h3>
+                    </div>
+                    <p>Em breve! Você aprenderá a dar movimento aos seus projetos controlando servo motores e motores
+                        DC.</p>
+                    <button class="btn-secundario" disabled
+                        style="border-color: #bdc3c7; color: #bdc3c7; cursor: not-allowed;">Em
+                        desenvolvimento...</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé Completo -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col" style="max-width: 300px;">
+                <h4 style="display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-robot" style="color: var(--verde-principal);"></i> RoboCode
+                </h4>
+                <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual,
+                    interativo e divertido através da robótica educacional.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navegação Rápida</h4>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre o Curso</a></li>
+                    <li><a href="#atividades">Trilha de Aulas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#" target="_blank">Acessar Tinkercad</a></li>
+                    <li><a href="#" target="_blank">Download Arduino IDE</a></li>
+                    <li><a href="#">Dúvidas Frequentes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Projeto RoboCode. Desenvolvido para facilitar o ensino de tecnologia.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Externo -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>
