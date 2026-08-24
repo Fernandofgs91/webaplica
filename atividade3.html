@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RoboCode - Atividade 03: Sensor</title>
     <!-- Ícones e Fontes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- CSS Externo -->
     <link rel="stylesheet" href="css/atividade3.css">
 </head>
+
 <body>
 
     <!-- Menu Superior -->
@@ -20,19 +23,21 @@
         <ul class="nav-links">
             <li><a href="index.html#inicio">Início</a></li>
             <li><a href="index.html#atividades">Outras Atividades</a></li>
-            <li><a href="index.html#inicio" class="btn-nav"><i class="fa-solid fa-arrow-left"></i> Voltar ao Menu</a></li>
+            <li><a href="index.html#inicio" class="btn-nav"><i class="fa-solid fa-arrow-left"></i> Voltar ao Menu</a>
+            </li>
         </ul>
     </nav>
 
     <!-- Conteúdo da Atividade -->
     <main class="main-content">
-        
+
         <!-- Cabeçalho da Aula (Personalizado para Sensor) -->
         <div class="header-activity">
             <div class="header-text">
                 <span class="badge">ATIVIDADE 03</span>
                 <h1>Leitura de Sensor de Distância</h1>
-                <p>Deixe seu robô inteligente. Aprenda a ler dados de um sensor ultrassônico para medir distâncias e tomar decisões automáticas.</p>
+                <p>Deixe seu robô inteligente. Aprenda a ler dados de um sensor ultrassônico para medir distâncias e
+                    tomar decisões automáticas.</p>
             </div>
             <div class="header-icon">
                 <i class="fa-solid fa-wifi"></i>
@@ -49,7 +54,7 @@
         <!-- ABA 1: Recursos da Aula -->
         <div id="sobre" class="content-area">
             <h2>Materiais de Estudo</h2>
-            
+
             <div class="resource-grid">
                 <a href="#" target="_blank" class="resource-card">
                     <div class="resource-icon icon-video">
@@ -58,7 +63,7 @@
                     <h3>Videoaula Completa</h3>
                     <p>Assista ao passo a passo em vídeo com a explicação teórica.</p>
                 </a>
-                
+
                 <a href="#" target="_blank" class="resource-card">
                     <div class="resource-icon icon-pdf">
                         <i class="fa-solid fa-file-pdf"></i>
@@ -66,13 +71,23 @@
                     <h3>Apostila em PDF</h3>
                     <p>Leia a teoria detalhada e os diagramas elétricos da aula.</p>
                 </a>
-                
+
                 <a href="#" target="_blank" class="resource-card">
                     <div class="resource-icon icon-forms">
                         <i class="fa-solid fa-clipboard-check"></i>
                     </div>
                     <h3>Formulário (Quiz)</h3>
                     <p>Responda o questionário para validar o seu aprendizado.</p>
+
+                    <!-- 4º CARD NOVO - TINKERCAD -->
+                    <a href="https://www.tinkercad.com/dashboard" target="_blank" class="resource-card">
+                        <div class="resource-icon" style="background: transparent; overflow: hidden;">
+                            <img src="img/logotinkercad.png" alt="Tinkercad"
+                                style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                        </div>
+                        <h3>Simulação (Tinkercad)</h3>
+                        <p>Acesse o simulador para montar o circuito, testar o código e ver na prática.</p>
+                    </a>
                 </a>
             </div>
 
@@ -107,9 +122,11 @@
             <h2>Instruções Práticas</h2>
             <ol class="passo-lista">
                 <li>Abra o seu ambiente de simulação no <strong>Tinkercad</strong>.</li>
-                <li>Adicione uma placa Arduino, uma Protoboard, um LED e um <strong>Sensor Ultrassônico (HC-SR04)</strong>.</li>
+                <li>Adicione uma placa Arduino, uma Protoboard, um LED e um <strong>Sensor Ultrassônico
+                        (HC-SR04)</strong>.</li>
                 <li>Ligue o pino <strong>VCC</strong> do sensor nos 5V e o <strong>GND</strong> no GND do Arduino.</li>
-                <li>Conecte o pino <strong>Trig</strong> ao pino digital 7 e o pino <strong>Echo</strong> ao pino digital 6.</li>
+                <li>Conecte o pino <strong>Trig</strong> ao pino digital 7 e o pino <strong>Echo</strong> ao pino
+                    digital 6.</li>
                 <li>Monte um circuito com o LED conectado ao pino digital 13.</li>
                 <li>Insira o código fornecido na apostila para calcular a distância em centímetros.</li>
                 <li>Crie uma condição: Se a distância for menor que 100cm, acenda o LED. Caso contrário, apague.</li>
@@ -118,16 +135,17 @@
         </div>
 
     </main>
-   <!-- Rodapé Completo -->
+    <!-- Rodapé Completo -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-col" style="max-width: 300px;">
                 <h4 style="display: flex; align-items: center; gap: 10px;">
                     <i class="fa-solid fa-robot" style="color: var(--verde-principal);"></i> RoboCode
                 </h4>
-                <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual, interativo e divertido através da robótica educacional.</p>
+                <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual,
+                    interativo e divertido através da robótica educacional.</p>
             </div>
-            
+
             <div class="footer-col">
                 <h4>Navegação Rápida</h4>
                 <ul>
@@ -141,8 +159,9 @@
                 <h4>Recursos</h4>
                 <ul>
                     <li><a href="https://www.tinkercad.com/" target="_blank">Acessar Tinkercad</a></li>
-                    <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE" target="_blank">Download Arduino IDE</a></li>
-               
+                    <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE"
+                            target="_blank">Download Arduino IDE</a></li>
+
                 </ul>
             </div>
         </div>
@@ -155,4 +174,5 @@
     <!-- JavaScript Externo -->
     <script src="js/atividade3.js"></script>
 </body>
+
 </html>

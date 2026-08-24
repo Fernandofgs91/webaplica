@@ -390,12 +390,12 @@ body {
 
     /* Ajuste do Rodapé para telas muito estreitas */
     .footer-content {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; 
+        text-align: center; 
         align-items: center;
     }
     
     .footer-col {
-        width: 100%;
+        width: 100%; 
     }
 }

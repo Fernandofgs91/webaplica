@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RoboCode - Atividade 01: LED</title>
     <!-- Ícones e Fontes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- CSS Externo -->
     <link rel="stylesheet" href="css/atividade1.css">
 </head>
+
 <body>
 
     <!-- Menu Superior -->
@@ -26,7 +29,7 @@
 
     <!-- Conteúdo da Atividade -->
     <main class="main-content">
-        
+
         <!-- Cabeçalho da Aula -->
         <div class="header-activity">
             <div class="header-text">
@@ -49,7 +52,7 @@
         <!-- ABA 1: Recursos da Aula (Links) -->
         <div id="sobre" class="content-area">
             <h2>Materiais de Estudo</h2>
-            
+
             <div class="resource-grid">
                 <a href="https://youtu.be/RsDyXjZs1PU" target="_blank" class="resource-card">
                     <div class="resource-icon icon-video">
@@ -58,21 +61,32 @@
                     <h3>Videoaula Completa</h3>
                     <p>Assista ao passo a passo em vídeo com a explicação teórica.</p>
                 </a>
-                
-                <a href="https://drive.google.com/file/d/1k_wYzyM3q8gbBVR49dUiiBv717crHSry/view?usp=drive_link" target="_blank" class="resource-card">
+
+                <a href="https://drive.google.com/file/d/1k_wYzyM3q8gbBVR49dUiiBv717crHSry/view?usp=drive_link"
+                    target="_blank" class="resource-card">
                     <div class="resource-icon icon-pdf">
                         <i class="fa-solid fa-file-pdf"></i>
                     </div>
                     <h3>Apostila em PDF</h3>
                     <p>Leia a teoria detalhada e os diagramas elétricos da aula.</p>
                 </a>
-                
+
                 <a href="https://forms.gle/5xNGoNHPj3wwF32x7" target="_blank" class="resource-card">
                     <div class="resource-icon icon-forms">
                         <i class="fa-solid fa-clipboard-check"></i>
                     </div>
                     <h3>Formulário (Quiz)</h3>
                     <p>Responda o questionário para validar o seu aprendizado.</p>
+                </a>
+
+                <!-- 4º CARD NOVO - TINKERCAD -->
+                <a href="https://www.tinkercad.com/dashboard" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: transparent; overflow: hidden;">
+                        <img src="img/logotinkercad.png" alt="Tinkercad"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                    </div>
+                    <h3>Simulação (Tinkercad)</h3>
+                    <p>Acesse o simulador para montar o circuito, testar o código e ver na prática.</p>
                 </a>
             </div>
 
@@ -85,20 +99,23 @@
         <div id="materiais" class="content-area" style="display: none;">
             <h2>Arquivos para Download</h2>
             <div class="resource-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                <a href="https://drive.google.com/file/d/1oiCdFPkoTiHt7OUaZeX1EC3WDrPViE0s/view?usp=drive_link" class="resource-card">
+                <a href="https://drive.google.com/file/d/1oiCdFPkoTiHt7OUaZeX1EC3WDrPViE0s/view?usp=drive_link"
+                    class="resource-card">
                     <div class="resource-icon icon-code" style="background: #34495e;">
                         <i class="fa-solid fa-file-code"></i>
                     </div>
                     <h3>Código Arduino (.ino)</h3>
                     <p>Baixe o código-fonte.</p>
                 </a>
-                <a href="https://drive.google.com/file/d/1j3tY9llUZsCL1WMbT2v27WBMkh-8rcXo/view?usp=drive_link" class="resource-card">
+                <a href="https://drive.google.com/file/d/1j3tY9llUZsCL1WMbT2v27WBMkh-8rcXo/view?usp=drive_link"
+                    class="resource-card">
                     <div class="resource-icon icon-diagram" style="background: #27ae60;">
                         <i class="fa-solid fa-diagram-project"></i>
                     </div>
                     <h3>Diagrama elétrico</h3>
                     <p>Esquema de montagem.</p>
                 </a>
+
             </div>
         </div>
 
@@ -119,14 +136,16 @@
 
     <!-- Rodapé Completo -->
     <footer class="footer">
+        <!-- ... (Restante do seu Footer Original) ... -->
         <div class="footer-content">
             <div class="footer-col" style="max-width: 300px;">
                 <h4 style="display: flex; align-items: center; gap: 10px;">
                     <i class="fa-solid fa-robot" style="color: var(--verde-principal);"></i> RoboCode
                 </h4>
-                <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual, interativo e divertido através da robótica educacional.</p>
+                <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual,
+                    interativo e divertido através da robótica educacional.</p>
             </div>
-            
+
             <div class="footer-col">
                 <h4>Navegação Rápida</h4>
                 <ul>
@@ -140,8 +159,9 @@
                 <h4>Recursos</h4>
                 <ul>
                     <li><a href="https://www.tinkercad.com/" target="_blank">Acessar Tinkercad</a></li>
-                    <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE" target="_blank">Download Arduino IDE</a></li>
-               
+                    <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE"
+                            target="_blank">Download Arduino IDE</a></li>
+
                 </ul>
             </div>
         </div>
@@ -153,4 +173,5 @@
     <!-- JavaScript Externo -->
     <script src="js/atividade1.js"></script>
 </body>
+
 </html>
