@@ -79,6 +79,7 @@ body {
 
 .btn-nav:hover {
     background-color: var(--verde-escuro);
+    margin: 0; /* Add margin check */
 }
 
 /* Seção Hero (Apresentação Principal) */
@@ -302,20 +303,99 @@ body {
     font-size: 14px;
 }
 
-/* Responsividade */
+/* =========================================
+   Responsividade Aprimorada
+   ========================================= */
+
+/* 1. Telas Médias (Tablets e Laptops pequenos) - até 992px */
+@media (max-width: 992px) {
+    .hero {
+        padding: 120px 5% 60px; /* Ajusta o padding topo por causa do menu fixo */
+        gap: 30px;
+    }
+    
+    .hero-text h1 {
+        font-size: 36px; /* Reduz a fonte levemente */
+    }
+    
+    .hero-image {
+        font-size: 100px; /* Diminui a imagem/ícone */
+    }
+}
+
+/* 2. Telas Pequenas (Smartphones e Tablets em pé) - até 768px */
 @media (max-width: 768px) {
+    /* Ajuste do Menu: Empilha os itens em vez de escondê-los */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Ajuste do Hero: Fica em coluna, mas mantemos a imagem reduzida */
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 60px 5%;
+        padding: 160px 5% 50px; /* Mais espaço no topo pois o menu ficou mais alto */
+    }
+
+    .hero-text p {
+        margin: 0 auto 20px auto;
     }
 
     .hero-image {
-        display: none;
+        display: block; /* Mantém a imagem visível */
+        font-size: 80px;
     }
 
-    .nav-links {
-        display: none;
-        /* Em um projeto real, aqui entraria um menu hamburguer */
+    /* Redução de espaçamentos gerais nas seções */
+    .sobre-curso, .atividades {
+        padding: 50px 5%;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
+
+/* 3. Telas Muito Pequenas (Smartphones pequenos) - até 480px */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .nav-links li a {
+        font-size: 14px; /* Diminui a fonte do menu para caber na tela */
+    }
+
+    .btn-nav {
+        padding: 6px 15px; /* Botão do menu um pouco mais compacto */
+    }
+
+    .feature-card, .card {
+        padding: 20px; /* Menos respiro lateral para priorizar o texto */
+    }
+
+    /* Ajuste do Rodapé para telas muito estreitas */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-col {
+        width: 100%;
     }
 }

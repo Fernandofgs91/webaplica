@@ -339,34 +339,118 @@ body {
     font-size: 14px; 
 }
 
-/* --- RESPONSIVIDADE --- */
+/* =========================================
+   RESPONSIVIDADE APRIMORADA
+   ========================================= */
+
+/* 1. Telas Médias (Tablets e Laptops pequenos) - até 992px */
+@media (max-width: 992px) {
+    .main-content {
+        margin-top: 120px; /* Mais espaço para o menu não sobrepor o conteúdo */
+    }
+}
+
+/* 2. Telas Pequenas (Smartphones e Tablets em pé) - até 768px */
 @media (max-width: 768px) {
-    .nav-links { 
-        display: none; 
+    /* Ajuste do Menu: Empilha os itens em vez de escondê-los */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Ajuste do Conteúdo Principal */
+    .main-content {
+        margin-top: 170px; /* Aumenta a margem pois o menu ficou mais alto */
+        padding: 0 5%;
     }
     
     .header-activity { 
         flex-direction: column; 
         text-align: center; 
         gap: 15px; 
+        padding: 25px 20px;
     }
     
+    /* Melhoria no scroll horizontal das Abas */
     .tabs { 
         overflow-x: auto; 
         white-space: nowrap; 
-        padding-bottom: 5px; 
+        padding-bottom: 8px;
+        /* Estilização suave para a barra de rolagem */
+        scrollbar-width: thin;
+        scrollbar-color: var(--verde-principal) var(--borda);
+    }
+
+    .tabs::-webkit-scrollbar {
+        height: 6px;
+    }
+    .tabs::-webkit-scrollbar-track {
+        background: var(--borda);
+        border-radius: 4px;
+    }
+    .tabs::-webkit-scrollbar-thumb {
+        background-color: var(--verde-principal);
+        border-radius: 4px;
     }
 
     .tab-btn {
         padding: 10px 15px;
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .content-area {
-        padding: 20px;
+        padding: 25px 20px;
+    }
+}
+
+/* 3. Telas Muito Pequenas (Smartphones pequenos) - até 480px */
+@media (max-width: 480px) {
+    .nav-links li a {
+        font-size: 14px; 
     }
 
-    .resource-grid {
-        grid-template-columns: 1fr;
+    .header-text h1 {
+        font-size: 24px;
+    }
+    
+    .header-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        border-radius: 12px;
+    }
+
+    .resource-card {
+        padding: 20px 15px;
+    }
+    
+    .resource-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .btn-complete {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+    /* Ajuste do Rodapé para telas estreitas */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-col {
+        width: 100%;
     }
 }
