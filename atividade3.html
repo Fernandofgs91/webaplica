@@ -35,12 +35,13 @@
         <div class="header-activity">
             <div class="header-text">
                 <span class="badge">ATIVIDADE 03</span>
-                <h1>Leitura de Sensor de Distância</h1>
-                <p>Deixe seu robô inteligente. Aprenda a ler dados de um sensor ultrassônico para medir distâncias e
-                    tomar decisões automáticas.</p>
+                <h1>Fazer um Semáforo</h1>
+                <p>Domine sequências temporizadas e a lógica de atrasos (delay) para alternar múltiplos estados dos LEDs
+                    vermelho, verde e amarelo.</p>
             </div>
-            <div class="header-icon">
-                <i class="fa-solid fa-wifi"></i>
+            <div class="card-icon sensor" style="background-color: transparent; padding: 0;">
+                <img src="img/semaforo.webp" alt="Semáforo Arduino"
+                    style="width: 50%; height: 50%; object-fit: cover; border-radius: 8px;">
             </div>
         </div>
 
@@ -122,15 +123,19 @@
             <h2>Instruções Práticas</h2>
             <ol class="passo-lista">
                 <li>Abra o seu ambiente de simulação no <strong>Tinkercad</strong>.</li>
-                <li>Adicione uma placa Arduino, uma Protoboard, um LED e um <strong>Sensor Ultrassônico
-                        (HC-SR04)</strong>.</li>
-                <li>Ligue o pino <strong>VCC</strong> do sensor nos 5V e o <strong>GND</strong> no GND do Arduino.</li>
-                <li>Conecte o pino <strong>Trig</strong> ao pino digital 7 e o pino <strong>Echo</strong> ao pino
-                    digital 6.</li>
-                <li>Monte um circuito com o LED conectado ao pino digital 13.</li>
-                <li>Insira o código fornecido na apostila para calcular a distância em centímetros.</li>
-                <li>Crie uma condição: Se a distância for menor que 100cm, acenda o LED. Caso contrário, apague.</li>
-                <li>Inicie a simulação, clique no sensor e mova o objeto virtual para testar!</li>
+                <li>Adicione uma placa Arduino, uma Protoboard, três resistores e três LEDs nas cores <strong>vermelho,
+                        amarelo e verde</strong>.</li>
+                <li>Conecte o cátodo (perna negativa) de cada LED na linha de GND da protoboard, ligando-a ao pino GND
+                    do Arduino.</li>
+                <li>Conecte o ânodo (perna positiva) do LED vermelho através de um resistor ao pino digital
+                    <strong>12</strong> do Arduino.</li>
+                <li>Conecte o ânodo do LED amarelo através de um resistor ao pino digital <strong>10</strong> do
+                    Arduino.</li>
+                <li>Conecte o ânodo do LED verde através de um resistor ao pino digital <strong>8</strong> do Arduino.
+                </li>
+                <li>Insira o código de programação utilizando comandos de acendimento e temporizadores
+                    (<code>delay</code>) para alternar os estados do semáforo.</li>
+                <li>Inicie a simulação para testar a sequência de luzes do semáforo!</li>
             </ol>
         </div>
 
