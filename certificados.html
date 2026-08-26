@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Certificados - RoboCode</title>
+
+  <!-- Reuse site fonts & icons used by main site -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page-specific styles (keeps main site look) -->
+  <link rel="stylesheet" href="css/index.css"> <!-- existing site css -->
+  <link rel="stylesheet" href="css/certificados.css"> <!-- our new styles for manager -->
+
+  <!-- libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Firebase compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <!-- reuse main site nav to keep the same layout -->
+  <nav class="navbar">
+      <a href="index.html" class="logo"><i class="fa-solid fa-robot"></i> RoboCode</a>
+      <ul class="nav-links">
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#sobre">O Curso</a></li>
+          <li><a href="index.html#atividades">Atividades</a></li>
+          <li><a href="index.html#atividades" class="btn-nav">Acessar Aulas</a></li>
+      </ul>
+  </nav>
+
+  <main class="main-content" style="padding: 28px 20px;">
+    <section class="cert-manager">
+      <div class="container-grid">
+        <header class="cert-header">
+          <div>
+            <h1>Gerenciador de Participantes & Emissão de Certificados</h1>
+            <p class="small">Integração Firebase — autenticação de organizador e emissão em lote.</p>
+          </div>
+
+          <div class="top-right">
+            <div class="card config-inline">
+              <input id="courseName" type="text" placeholder="Nome do curso/evento" />
+              <input id="courseHours" type="text" placeholder="Horas (ex: 8h)" />
+              <button id="saveCourseBtn" class="btn btn-ghost">Salvar</button>
+            </div>
+
+            <div class="card auth-inline" id="authCard">
+              <div id="signedOutUI">
+                <input id="adminEmail" type="email" placeholder="admin@exemplo.com" />
+                <input id="adminPassword" type="password" placeholder="Senha" />
+                <div style="display:flex; gap:8px;">
+                  <button id="signInBtn" class="btn btn-primary">Entrar</button>
+                  <button id="signUpBtn" class="btn btn-ghost">Criar conta</button>
+                </div>
+              </div>
+
+              <div id="signedInUI" style="display:none;">
+                <div class="small">Logado como <span id="adminEmailLabel"></span></div>
+                <div style="display:flex; gap:8px; margin-top:8px;">
+                  <button id="signOutBtn" class="btn btn-ghost">Sair</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="grid-columns">
+          <section class="card main-card">
+            <h3>Cadastro de Participante</h3>
+            <form id="registerForm">
+              <div class="field">
+                <label for="fullName">Nome Completo</label>
+                <input id="fullName" type="text" autocomplete="name" placeholder="Ex: Maria Silva" />
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" autocomplete="email" placeholder="exemplo@dominio.com" />
+              </div>
+              <div style="display:flex; gap:8px;">
+                <button type="submit" class="btn btn-primary">Cadastrar (Firestore)</button>
+                <button type="button" id="clearLocalBtn" class="btn btn-ghost">Limpar Config Local</button>
+              </div>
+            </form>
+
+            <div style="margin-top:16px;">
+              <h4>Participantes Registrados</h4>
+              <div id="participantsList" class="list" aria-live="polite"></div>
+            </div>
+          </section>
+
+          <aside class="card right-col">
+            <h4>Verificação de Atividades</h4>
+            <p class="small">Digite o e-mail para ver e marcar atividades. A emissão em lote é para administradores autenticados.</p>
+            <div style="display:flex; gap:8px; margin-top:8px;">
+              <input id="checkEmail" type="email" placeholder="Digite o e-mail do participante" />
+              <button id="checkBtn" class="btn btn-primary">Verificar</button>
+            </div>
+
+            <div id="activitiesSection" style="margin-top:12px; display:none;">
+              <h5>Atividades OBRIGATÓRIAS</h5>
+              <div id="activitiesList" class="activities"></div>
+            </div>
+
+            <div class="certificate-wrap" style="margin-top:12px;">
+              <h4>Pré-visualização do Certificado</h4>
+
+              <div id="certificate" class="certificate-preview">
+                <div class="cert-top-left">Organização</div>
+                <div class="cert-top-right">Certificado Digital</div>
+
+                <h2>Certificado de Conclusão</h2>
+                <div class="meta">Certificamos que</div>
+                <div class="name" id="certName">— NOME DO PARTICIPANTE —</div>
+                <div class="meta" id="certCourse">concluiu o curso <strong>— NOME DO CURSO —</strong></div>
+                <div class="meta" id="certHours">Carga horária: <strong>— HORAS —</strong></div>
+
+                <div style="margin-top:18px;" class="meta">Emitido em <span id="certDate">--/--/----</span></div>
+
+                <div class="cert-bottom-right">Assinatura digital</div>
+              </div>
+
+              <div class="cert-actions" style="margin-top:10px;">
+                <button id="downloadPdfBtn" class="btn btn-primary">Gerar e Baixar PDF</button>
+                <button id="downloadPngBtn" class="btn btn-ghost">Baixar PNG</button>
+              </div>
+
+              <div style="margin-top:12px; display:flex; gap:8px;">
+                <button id="batchIssueBtn" class="btn btn-primary" style="display:none;">Emitir e Baixar (ZIP) para todos elegíveis</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- reuse footer of site to keep consistency -->
+  <footer class="footer">
+      <div class="footer-content">
+          <div class="footer-col" style="max-width: 300px;">
+              <h4 style="display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-robot" style="color: var(--verde-principal);"></i> RoboCode</h4>
+              <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual, interativo e divertido através da robótica educacional.</p>
+          </div>
+
+          <div class="footer-col">
+              <h4>Navegação Rápida</h4>
+              <ul>
+                  <li><a href="index.html#inicio">Início</a></li>
+                  <li><a href="index.html#sobre">Sobre o Curso</a></li>
+                  <li><a href="index.html#atividades">Trilha de Aulas</a></li>
+              </ul>
+          </div>
+
+          <div class="footer-col">
+              <h4>Recursos</h4>
+              <ul>
+                  <li><a href="https://www.tinkercad.com/" target="_blank">Acessar Tinkercad</a></li>
+                  <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE" target="_blank">Download Arduino IDE</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2026 Projeto RoboCode. Desenvolvido para facilitar o ensino de tecnologia.</p>
+      </div>
+  </footer>
+
+  <!-- App script -->
+  <script src="js/certificados.js"></script>
+</body>
+</html>
