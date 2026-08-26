@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('💡 Digite pararSimulacaoSensor() para interromper a simulação.');
 });
 
+
 // ==========================================
 // 11. FUNÇÃO GLOBAL PARA STATUS DO SENSOR
 // ==========================================
