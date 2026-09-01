@@ -371,62 +371,52 @@ body {
     color: #bdc3c7;
     cursor: not-allowed;
 }
-
-/* Rodapé */
+/* --- RODAPÉ --- */
 .footer {
     background-color: var(--roxo-escuro);
     color: #b2bec3;
     padding: 50px 5% 20px;
-    margin-top: 50px;
+    margin-top: auto;
 }
 
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 30px;
+.footer-content { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 30px; 
+    margin-bottom: 30px; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+    padding-bottom: 30px; 
 }
 
-.footer-col {
-    flex: 1;
-    min-width: 200px;
+.footer-col h4 { 
+    color: var(--branco); 
+    margin-bottom: 15px; 
+    font-size: 18px; 
 }
 
-.footer-col h4 {
-    color: var(--branco);
-    margin-bottom: 15px;
-    font-size: 18px;
+.footer-col ul { 
+    list-style: none; 
 }
 
-.footer-col ul {
-    list-style: none;
+.footer-col ul li { 
+    margin-bottom: 10px; 
 }
 
-.footer-col ul li {
-    margin-bottom: 10px;
+.footer-col ul li a { 
+    color: #b2bec3; 
+    text-decoration: none; 
+    transition: 0.3s; 
 }
 
-.footer-col ul li a {
-    color: #b2bec3;
-    text-decoration: none;
-    transition: 0.3s;
+.footer-col ul li a:hover { 
+    color: var(--verde-principal); 
 }
 
-.footer-col ul li a:hover {
-    color: var(--verde-principal);
+.footer-bottom { 
+    text-align: center; 
+    font-size: 14px; 
 }
-
-.footer-bottom {
-    text-align: center;
-    font-size: 14px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 /* =========================================
    Responsividade Aprimorada
    ========================================= */
@@ -564,5 +554,78 @@ body {
 
     .footer-content {
         gap: 25px;
+    }
+}
+
+/* ==========================================
+   FINALIDADE UNIFICADA (Dentro do Sobre)
+   ========================================== */
+
+.finalidade-unificada {
+    max-width: 900px;
+    margin: 60px auto 0;
+    padding: 40px 50px;
+    background: var(--branco);
+    border-radius: 16px;
+    border-left: 5px solid var(--verde-principal);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.finalidade-divider {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.finalidade-divider span {
+    display: inline-block;
+    background: var(--verde-principal);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.finalidade-texto p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--texto);
+    margin-bottom: 15px;
+}
+
+.finalidade-texto p:last-child {
+    margin-bottom: 0;
+}
+
+.finalidade-texto strong {
+    color: var(--verde-principal);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .finalidade-unificada {
+        padding: 25px 20px;
+        margin-top: 40px;
+    }
+    
+    .finalidade-texto p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .finalidade-unificada {
+        padding: 20px 15px;
+        border-left-width: 3px;
+    }
+    
+    .finalidade-divider span {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
     }
 }
