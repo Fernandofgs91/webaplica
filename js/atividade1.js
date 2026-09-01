@@ -61,50 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==========================================
-    // 2. BOTÃO "MARCAR COMO CONCLUÍDA"
-    // ==========================================
-    const btnConcluir = document.getElementById('btnConcluir');
-
-    if (btnConcluir) {
-        // Verifica se a atividade já foi concluída (salvo no localStorage)
-        const isCompleted = localStorage.getItem('atividade1_concluida') === 'true';
-        
-        if (isCompleted) {
-            btnConcluir.classList.add('completed');
-            btnConcluir.innerHTML = '<i class="fa-solid fa-check-circle"></i> Atividade já concluída! ✅';
-        }
-
-        btnConcluir.addEventListener('click', function() {
-            // Se já estiver concluída, não faz nada
-            if (this.classList.contains('completed')) {
-                alert('📌 Esta atividade já foi concluída anteriormente!');
-                return;
-            }
-
-            // Confirmação antes de marcar como concluída
-            const confirmar = confirm('✅ Deseja marcar esta atividade como concluída?');
-            
-            if (confirmar) {
-                // Salva no localStorage
-                localStorage.setItem('atividade1_concluida', 'true');
-                
-                // Atualiza o botão
-                this.classList.add('completed');
-                this.innerHTML = '<i class="fa-solid fa-check-circle"></i> Atividade concluída! ✅';
-                
-                // Mensagem de sucesso
-                alert('🎉 Parabéns! Você concluiu a Atividade 01 - LED!');
-                
-                // Dispara um evento personalizado (para possíveis integrações futuras)
-                document.dispatchEvent(new CustomEvent('atividadeConcluida', {
-                    detail: { atividade: 'LED', numero: 1 }
-                }));
-            }
-        });
-    }
-
-    // ==========================================
-    // 3. ANIMAÇÃO DE CARDS AO PASSAR O MOUSE
+    // 2. ANIMAÇÃO DE CARDS AO PASSAR O MOUSE
     // ==========================================
     const resourceCards = document.querySelectorAll('.resource-card');
     resourceCards.forEach(card => {

@@ -269,39 +269,6 @@ body {
     color: var(--roxo-escuro);
 }
 
-/* --- BOTÃO DE CONCLUIR --- */
-.btn-complete {
-    background-color: var(--verde-principal);
-    color: white;
-    border: none;
-    padding: 16px 30px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.btn-complete:hover {
-    background-color: var(--verde-escuro);
-    box-shadow: 0 4px 15px rgba(0, 156, 109, 0.3);
-}
-
-.btn-complete.completed {
-    background-color: #95a5a6;
-    cursor: default;
-}
-
-.btn-complete.completed:hover {
-    background-color: #95a5a6;
-    box-shadow: none;
-}
-
 /* --- RODAPÉ --- */
 .footer {
     background-color: var(--roxo-escuro);
@@ -446,11 +413,6 @@ body {
         width: 45px;
         height: 45px;
         font-size: 18px;
-    }
-
-    .btn-complete {
-        padding: 14px 20px;
-        font-size: 15px;
     }
 
     /* Ajuste do Rodapé para telas estreitas */
