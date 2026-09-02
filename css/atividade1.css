@@ -1,11 +1,11 @@
 :root {
-    --verde-principal: #009c6d;
-    --verde-escuro: #00805a;
+    --verde-principal: #007A55;
+    --verde-escuro: #006344;
     --roxo-escuro: #1a1a3a;
     --cinza-bg: #f4f6f9;
     --branco: #ffffff;
     --texto: #2d3436;
-    --texto-suave: #636e72;
+    --texto-suave: #4f5b60;
     --borda: #e5e7eb;
 }
 
@@ -40,20 +40,19 @@ body {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--branco);
     display: flex;
     align-items: center;
-    gap: 10px;
     text-decoration: none;
+    line-height: 0;
 }
 
-.logo i { 
-    color: var(--verde-principal); 
-    font-size: 30px; 
+.logo img {
+    display: block;
+    width: 175px;
+    height: auto;
+    max-height: 58px;
+    object-fit: contain;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
@@ -307,6 +306,17 @@ body {
     font-size: 14px; 
 }
 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    width: 170px;
+    height: auto;
+    display: block;
+}
 /* =========================================
    RESPONSIVIDADE APRIMORADA
    ========================================= */
@@ -415,5 +425,31 @@ body {
     
     .footer-col {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        width: 155px;
+        max-height: 52px;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-logo img {
+        width: 155px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 140px;
+        max-height: 48px;
+    }
+
+    .footer-logo img {
+        width: 145px;
     }
 }

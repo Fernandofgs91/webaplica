@@ -40,18 +40,18 @@ body {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--branco);
     display: flex;
     align-items: center;
-    gap: 10px;
     text-decoration: none;
+    line-height: 0;
 }
 
-.logo i { 
-    color: var(--verde-principal); 
-    font-size: 30px; 
+.logo img {
+    display: block;
+    width: 175px;
+    height: auto;
+    max-height: 58px;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -316,6 +316,18 @@ body {
     font-size: 14px; 
 }
 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    width: 170px;
+    height: auto;
+    display: block;
+}
+
 /* =========================================
    RESPONSIVIDADE APRIMORADA
    ========================================= */
@@ -424,5 +436,31 @@ body {
     
     .footer-col {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        width: 155px;
+        max-height: 52px;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-logo img {
+        width: 155px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 140px;
+        max-height: 48px;
+    }
+
+    .footer-logo img {
+        width: 145px;
     }
 }
