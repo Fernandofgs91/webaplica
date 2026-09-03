@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIARTEC - Atividade 04: Potenciômetro</title>
+    <!-- Ícones e Fontes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="css/atividade4.css">
+</head>
+
+<body>
+
+    <!-- Menu Superior -->
+    <nav class="navbar">
+        <a href="#inicio" class="logo" aria-label="CRIARTEC - Início">
+            <img src="img/criartec-logo-transparente.png" alt="CRIARTEC">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#atividades">Outras Atividades</a></li>
+            <li><a href="index.html#inicio" class="btn-nav"><i class="fa-solid fa-arrow-left"></i> Voltar ao Menu</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo da Atividade -->
+    <main class="main-content">
+
+        <!-- Cabeçalho da Aula (Personalizado para Potenciômetro) -->
+        <div class="header-activity">
+            <div class="header-text">
+                <span class="badge">ATIVIDADE 04</span>
+                <h1>Controlando a Luz do LED com Potenciômetro</h1>
+                <p>Domine a leitura de sinais analógicos e o controle de intensidade luminosa (PWM) para variar o brilho de um LED em tempo real.</p>
+            </div>
+            <div class="card-icon sensor" style="background-color: transparent; padding: 0;">
+                <img src="img/potenciometro.jpg" alt="Potenciômetro com LED Arduino"
+                    style="width: 50%; height: 50%; object-fit: cover; border-radius: 8px;">
+            </div>
+        </div>
+
+        <!-- Abas de Navegação -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="sobre">Recursos da Aula</button>
+            <button class="tab-btn" data-tab="materiais">Materiais Extras</button>
+            <button class="tab-btn" data-tab="passo">Passo a passo</button>
+        </div>
+
+        <!-- ABA 1: Recursos da Aula -->
+        <div id="sobre" class="content-area">
+            <h2>Materiais de Estudo</h2>
+
+            <div class="resource-grid">
+                <a href="https://youtu.be/PcwCRoK7LNo" target="_blank" class="resource-card">
+                    <div class="resource-icon icon-video">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <h3>Videoaula Completa</h3>
+                    <p>Assista ao passo a passo em vídeo com a explicação teórica sobre ADC e PWM.</p>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1RNbNshLLtBp64d9iKdORVnj9wu_TlzjA/view?usp=sharing"
+                    target="_blank" class="resource-card">
+                    <div class="resource-icon icon-pdf">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h3>Apostila em PDF</h3>
+                    <p>Leia a teoria detalhada sobre conversão analógico-digital e controle PWM.</p>
+                </a>
+
+                <a href="https://forms.gle/U8fFsDdHQbjkgeAz7" target="_blank" class="resource-card">
+                    <div class="resource-icon icon-forms">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h3>Formulário (Quiz)</h3>
+                    <p>Responda o questionário para validar o seu aprendizado.</p>
+                </a>
+
+                <!-- 4º CARD - TINKERCAD -->
+                <a href="https://www.tinkercad.com/dashboard" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: transparent; overflow: hidden;">
+                        <img src="img/logotinkercad.png" alt="Tinkercad"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                    </div>
+                    <h3>Simulação (Tinkercad)</h3>
+                    <p>Acesse o simulador para montar o circuito, testar o código e ver na prática.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- ABA 2: Materiais Extras -->
+        <div id="materiais" class="content-area" style="display: none;">
+            <h2>Arquivos para Download</h2>
+            <div class="resource-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <a href="https://drive.google.com/file/d/1Zavzefm2Le0jJR5lhXHM5IHxqrm8Nrc0/view?usp=sharing"
+                    class="resource-card">
+                    <div class="resource-icon icon-code">
+                        <i class="fa-solid fa-file-code"></i>
+                    </div>
+                    <h3>Código Arduino (.ino)</h3>
+                    <p>Baixe o código-fonte do controle de LED com potenciômetro.</p>
+                </a>
+                <a href="https://drive.google.com/file/d/1o0XSipWq1cTKN-AipwsXjssvD-0BJBsH/view?usp=sharing"
+                    class="resource-card">
+                    <div class="resource-icon icon-diagram">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h3>Diagrama elétrico</h3>
+                    <p>Esquema de montagem do potenciômetro e LED no Arduino.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- ABA 3: Passo a Passo (Personalizado para Potenciômetro) -->
+        <div id="passo" class="content-area" style="display: none;">
+            <h2>Instruções Práticas</h2>
+            <ol class="passo-lista">
+                <li>Abra o seu ambiente de simulação no <strong>Tinkercad</strong>.</li>
+                <li>Adicione uma placa Arduino Uno, uma Protoboard, um potenciômetro de <strong>10kΩ</strong>, um resistor de <strong>220Ω</strong> e um <strong>LED</strong> (qualquer cor).</li>
+                <li>Conecte o <strong>pino 1</strong> do potenciômetro ao <strong>5V</strong> do Arduino.</li>
+                <li>Conecte o <strong>pino 3</strong> do potenciômetro ao <strong>GND</strong> do Arduino.</li>
+                <li>Conecte o <strong>pino 2</strong> (central) do potenciômetro ao pino analógico <strong>A0</strong> do Arduino.</li>
+                <li>Conecte o <strong>catodo</strong> (perna negativa) do LED ao <strong>GND</strong> do Arduino.</li>
+                <li>Conecte o <strong>anodo</strong> (perna positiva) do LED através do resistor de 220Ω ao pino digital <strong>9</strong> (PWM) do Arduino.</li>
+                <li>Insira o código de programação utilizando os comandos <code>analogRead()</code>, <code>map()</code> e <code>analogWrite()</code> para controlar o brilho do LED.</li>
+                <li>Inicie a simulação e gire o potenciômetro para ver o brilho do LED variar em tempo real!</li>
+            </ol>
+
+            <!-- Código de Exemplo -->
+            <div style="margin-top: 30px; background: var(--cinza-bg); border-radius: 8px; padding: 20px;">
+                <h4 style="margin-bottom: 10px; color: var(--roxo-escuro);"><i class="fa-solid fa-code"></i> Código de Exemplo</h4>
+                <pre style="background: #1a1a2e; color: #e0e0e0; padding: 15px; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.8;">
+// Código C++ - Controle de LED com Potenciômetro
+
+int valorPot = 0;  // Variável para armazenar a leitura do potenciômetro
+
+void setup()
+{
+    pinMode(A0, INPUT);   // Configura pino A0 como entrada analógica
+    pinMode(9, OUTPUT);   // Configura pino 9 como saída PWM
+}
+
+void loop()
+{
+    valorPot = analogRead(A0);                      // Lê o valor do potenciômetro (0-1023)
+    analogWrite(9, map(valorPot, 0, 1023, 0, 255)); // Mapeia e escreve no LED
+    delay(10);                                      // Pequena pausa para estabilização
+}
+                </pre>
+            </div>
+
+            <!-- Tabela de Relação Entrada-Saída -->
+            <div style="margin-top: 30px; overflow-x: auto;">
+                <h4 style="margin-bottom: 15px; color: var(--roxo-escuro);"><i class="fa-solid fa-table"></i> Relação Entrada-Saída</h4>
+                <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                    <thead>
+                        <tr style="background: var(--roxo-escuro); color: white;">
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Posição do Pot.</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Tensão (V)</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Valor Lido (ADC)</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Valor PWM</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Brilho do LED</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">0° (min)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">0V</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">0</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">0</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">Apagado</td>
+                        </tr>
+                        <tr style="background: var(--cinza-bg);">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">25%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">1,25V</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">256</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">64</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">Baixo (25%)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">50%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">2,5V</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">512</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">128</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">Médio (50%)</td>
+                        </tr>
+                        <tr style="background: var(--cinza-bg);">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">75%</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">3,75V</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">768</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">192</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">Alto (75%)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">300° (max)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">5V</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">1023</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">255</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">Máximo (100%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Conceitos Fundamentais -->
+            <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid var(--verde-principal);">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-microchip"></i> ADC</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Conversor Analógico-Digital de 10 bits (0-1023)</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-wave-square"></i> PWM</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Modulação por Largura de Pulso (0-255)</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #e67e22;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-arrows-spin"></i> Map</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Função de mapeamento proporcional de valores</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #8e44ad;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-sliders"></i> Controle</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Entrada analógica → Saída modulada em tempo real</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Rodapé Completo -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col" style="max-width: 300px;">
+                <h4 class="footer-logo">
+                    <img src="img/criartec-logo-transparente.png" alt="CRIARTEC">
+                </h4>
+                <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual, interativo e divertido através da robótica educacional.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navegação Rápida</h4>
+                <ul>
+                    <li><a href="index.html#inicio">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre o Curso</a></li>
+                    <li><a href="index.html#atividades">Trilha de Aulas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="https://www.tinkercad.com/" target="_blank">Acessar Tinkercad</a></li>
+                    <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE" target="_blank">Download Arduino IDE</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Projeto CRIARTEC. Desenvolvido para facilitar o ensino de tecnologia.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Externo -->
+    <script src="js/atividade4.js"></script>
+</body>
+
+</html>

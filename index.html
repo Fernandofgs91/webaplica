@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/index.css">
     <style>
 
@@ -25,9 +29,7 @@
             <li><a href="#inicio">Início</a></li>
             <li><a href="#sobre">O Curso</a></li>
             <li class="dropdown">
-                <a href="#material" class="dropdown-toggle">
-                    Material <i class="fa-solid fa-chevron-down"></i>
-                </a>
+                <a href="#">Material <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="https://www.tinkercad.com/" target="_blank">
@@ -61,7 +63,7 @@
                     </li>
                 </ul>
             </li>
-                <li><a href="#atividades" class="btn-nav">Ir para Atividades</a></li>
+            <li><a href="#atividades" class="btn-nav">Ir para Atividades</a></li>
         </ul>
     </nav>
 
@@ -72,9 +74,7 @@
                 <h1>Aprenda robótica e programação <span>na prática!</span></h1>
                 <p>O CRIARTEC é o seu curso interativo para dominar lógica de programação utilizando simulações
                     incríveis no Tinkercad e placas Arduino.</p>
-                <a href="#atividades" class="btn-nav"
-                    style="display: inline-block; padding: 15px 30px; font-size: 16px;">Começar minha jornada <i
-                        class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></a>
+                <a href="#atividades" class="btn-nav">Começar minha jornada <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="hero-image">
                 <img src="img/logorero.png" alt="CRIARTEC - Robótica Educacional">
@@ -173,19 +173,19 @@
                             class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Card Atividade Futura -->
-                <div class="card" style="opacity: 0.7; background: #f8f9fa;">
+                <!-- Card Atividade 4 - Potenciômetro -->
+                <div class="card">
                     <div class="card-header">
-                        <div class="card-icon" style="background-color: #95a5a6;">
-                            <i class="fa-solid fa-lock"></i>
+                        <div class="card-icon sensor" style="background-color: transparent; padding: 0;">
+                            <img src="img/potenciometro.jpg" alt="Potenciômetro Arduino"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                         </div>
-                        <h3>Atividade 04: Motores</h3>
+                        <h3>Atividade 04: Controlando a Luz do LED com Potenciômetro</h3>
                     </div>
-                    <p>Em breve! Você aprenderá a dar movimento aos seus projetos controlando servo motores e motores
-                        DC.</p>
-                    <button class="btn-secundario" disabled
-                        style="border-color: #bdc3c7; color: #bdc3c7; cursor: not-allowed;">Em
-                        desenvolvimento...</button>
+                    <p>Domine a leitura de sinais analógicos e o controle de intensidade luminosa (PWM) para variar o
+                        brilho de um LED em tempo real.</p>
+                    <a href="atividade4.html" class="btn-secundario">Acessar Aula <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
             </div>
