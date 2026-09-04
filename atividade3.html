@@ -139,6 +139,105 @@
                     (<code>delay</code>) para alternar os estados do semáforo.</li>
                 <li>Inicie a simulação para testar a sequência de luzes do semáforo!</li>
             </ol>
+            <!-- Código de Exemplo -->
+            <div style="margin-top: 30px; background: var(--cinza-bg); border-radius: 8px; padding: 20px;">
+                <h4 style="margin-bottom: 10px; color: var(--roxo-escuro);"><i class="fa-solid fa-code"></i> Código de Exemplo</h4>
+                <pre style="background: #1a1a2e; color: #e0e0e0; padding: 15px; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.8;">
+// Código C++ - Controle de Semáforo
+
+int ledVermelho = 13;
+int ledVerde = 12;
+int ledAmarelo = 11;
+
+void setup()
+{
+    // Configura todos os LEDs como SAÍDA
+    pinMode(ledVermelho, OUTPUT);
+    pinMode(ledVerde, OUTPUT);
+    pinMode(ledAmarelo, OUTPUT);
+}
+
+void loop()
+{
+    // FASE 1: Sinal Verde (Siga)
+    digitalWrite(ledVerde, HIGH);
+    digitalWrite(ledAmarelo, LOW);
+    digitalWrite(ledVermelho, LOW);
+    delay(5000); // Fica verde por 5 segundos
+
+    // FASE 2: Sinal Amarelo (Atenção)
+    digitalWrite(ledVerde, LOW);
+    digitalWrite(ledAmarelo, HIGH);
+    digitalWrite(ledVermelho, LOW);
+    delay(2000); // Fica amarelo por 2 segundos
+
+    // FASE 3: Sinal Vermelho (Pare)
+    digitalWrite(ledVerde, LOW);
+    digitalWrite(ledAmarelo, LOW);
+    digitalWrite(ledVermelho, HIGH);
+    delay(5000); // Fica vermelho por 5 segundos
+}
+                </pre>
+            </div>
+
+            <!-- Tabela de Temporização do Semáforo -->
+            <div style="margin-top: 30px; overflow-x: auto;">
+                <h4 style="margin-bottom: 15px; color: var(--roxo-escuro);"><i class="fa-solid fa-stopwatch"></i> Tabela de Temporização e Estados</h4>
+                <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                    <thead>
+                        <tr style="background: var(--roxo-escuro); color: white;">
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Fase do Semáforo</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">LED Verde (Pino 12)</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">LED Amarelo (Pino 11)</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">LED Vermelho (Pino 13)</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Tempo (Delay)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">Siga (Verde)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: var(--verde-principal); font-weight: bold;">HIGH (Ligado)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">LOW</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">LOW</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">5000ms (5s)</td>
+                        </tr>
+                        <tr style="background: var(--cinza-bg);">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">Atenção (Amarelo)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">LOW</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #f1c40f; font-weight: bold;">HIGH (Ligado)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">LOW</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">2000ms (2s)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: bold;">Pare (Vermelho)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">LOW</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">LOW</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #e74c3c; font-weight: bold;">HIGH (Ligado)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">5000ms (5s)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Conceitos Fundamentais -->
+            <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid var(--verde-principal);">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-list-ol"></i> Sequenciamento</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">O Arduino lê o código de cima para baixo. A ordem em que você escreve os comandos é exatamente a ordem em que as luzes vão acender.</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-regular fa-clock"></i> Função Delay()</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Pausa o programa por um tempo especificado em milissegundos (1 segundo = 1000 milissegundos).</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #e67e22;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-code"></i> Limpeza de Estados</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">É essencial garantir que as outras luzes recebam o comando LOW (desligar) quando uma nova luz acender.</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #8e44ad;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-repeat"></i> Loop Infinito</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Após a fase vermelha terminar, o código chega ao fim do <code>loop()</code> e recomeça instantaneamente pela fase verde.</p>
+                </div>
+            </div>
         </div>
 
     </main>

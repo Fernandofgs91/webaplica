@@ -129,6 +129,89 @@
                 <li>Utilize a estrutura de condição <code>if / else</code> no código para ler o estado do botão.</li>
                 <li>Programe o LED para acender apenas quando o botão estiver pressionado.</li>
             </ol>
+            <!-- Código de Exemplo -->
+            <div style="margin-top: 30px; background: var(--cinza-bg); border-radius: 8px; padding: 20px;">
+                <h4 style="margin-bottom: 10px; color: var(--roxo-escuro);"><i class="fa-solid fa-code"></i> Código de Exemplo</h4>
+                <pre style="background: #1a1a2e; color: #e0e0e0; padding: 15px; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.8;">
+// Código C++ - Controle de LED com Botão
+
+int pinoBotao = 4; // Define o pino do botão
+int pinoLed = 12;  // Define o pino do LED
+int estadoBotao = 0; // Variável para guardar a leitura do botão
+
+void setup()
+{
+    // Configura o botão como ENTRADA de sinal
+    pinMode(pinoBotao, INPUT);
+    // Configura o LED como SAÍDA de energia
+    pinMode(pinoLed, OUTPUT);
+}
+
+void loop()
+{
+    // Lê o estado atual do botão (HIGH ou LOW) e guarda na variável
+    estadoBotao = digitalRead(pinoBotao);
+
+    // Estrutura de condição: SE o botão estiver pressionado
+    if (estadoBotao == HIGH) {
+        digitalWrite(pinoLed, HIGH); // Acende o LED
+    } 
+    // SENÃO (se o botão não estiver pressionado)
+    else {
+        digitalWrite(pinoLed, LOW);  // Apaga o LED
+    }
+}
+                </pre>
+            </div>
+
+            <!-- Tabela de Lógica Condicional -->
+            <div style="margin-top: 30px; overflow-x: auto;">
+                <h4 style="margin-bottom: 15px; color: var(--roxo-escuro);"><i class="fa-solid fa-code-branch"></i> Tabela de Lógica Condicional</h4>
+                <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                    <thead>
+                        <tr style="background: var(--roxo-escuro); color: white;">
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Ação Física no Botão</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Sinal Lido (digitalRead)</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Condição Atendida</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Ação Executada no LED</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">Pressionado (Fechado)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;"><code>HIGH</code> (5V)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: var(--verde-principal); font-weight: bold;">IF (Se)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">Acende o LED</td>
+                        </tr>
+                        <tr style="background: var(--cinza-bg);">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">Solto (Aberto)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;"><code>LOW</code> (0V)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: #e74c3c; font-weight: bold;">ELSE (Senão)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">Apaga o LED</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Conceitos Fundamentais -->
+            <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid var(--verde-principal);">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-right-to-bracket"></i> INPUT (Entrada)</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Usado para dizer ao Arduino que ele deve "escutar" o sinal que vem de fora, como o clique de um botão.</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-code-compare"></i> Variáveis</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">São como "caixas" na memória do Arduino usadas para guardar valores. No código, guardamos se o botão está apertado ou solto.</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #e67e22;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-code-branch"></i> IF / ELSE</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Lógica de decisão. O Arduino analisa uma pergunta (Ex: Botão == HIGH?). Se for verdade faz o <strong>IF</strong>, caso contrário faz o <strong>ELSE</strong>.</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #8e44ad;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-plug"></i> Resistor Pull-Down</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Garante que quando o botão estiver solto, o Arduino leia perfeitamente LOW (0V), evitando "ruídos" na leitura.</p>
+                </div>
+            </div>
         </div>
 
     </main>

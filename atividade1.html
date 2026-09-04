@@ -127,6 +127,79 @@
                 <li>Copie o código base disponível na videoaula e cole na aba de código do simulador.</li>
                 <li>Clique em "Iniciar Simulação" e veja o LED piscar!</li>
             </ol>
+            <!-- Código de Exemplo -->
+            <div style="margin-top: 30px; background: var(--cinza-bg); border-radius: 8px; padding: 20px;">
+                <h4 style="margin-bottom: 10px; color: var(--roxo-escuro);"><i class="fa-solid fa-code"></i> Código de Exemplo</h4>
+                <pre style="background: #1a1a2e; color: #e0e0e0; padding: 15px; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.8;">
+// Código C++ - Piscar um LED (Blink)
+
+int pinoLed = 11; // Define o pino onde o LED está conectado
+
+void setup()
+{
+    // Configura o pino do LED como uma SAÍDA de energia
+    pinMode(pinoLed, OUTPUT);
+}
+
+void loop()
+{
+    digitalWrite(pinoLed, HIGH); // Liga o LED (nível de energia ALTO - 5V)
+    delay(1000);                 // Espera por 1000 milissegundos (1 segundo)
+    
+    digitalWrite(pinoLed, LOW);  // Desliga o LED (nível de energia BAIXO - 0V)
+    delay(1000);                 // Espera por mais 1 segundo antes de repetir
+}
+                </pre>
+            </div>
+
+            <!-- Tabela de Sinais Digitais -->
+            <div style="margin-top: 30px; overflow-x: auto;">
+                <h4 style="margin-bottom: 15px; color: var(--roxo-escuro);"><i class="fa-solid fa-table"></i> Tabela de Estados (Sinais Digitais)</h4>
+                <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                    <thead>
+                        <tr style="background: var(--roxo-escuro); color: white;">
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Comando Arduino</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Sinal Lógico</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Tensão (V)</th>
+                            <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Estado do LED</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;"><code>digitalWrite(pino, HIGH)</code></td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;"><strong>1</strong> (Verdadeiro)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">5V</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: var(--verde-principal); font-weight: bold;">Aceso <i class="fa-solid fa-lightbulb"></i></td>
+                        </tr>
+                        <tr style="background: var(--cinza-bg);">
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;"><code>digitalWrite(pino, LOW)</code></td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;"><strong>0</strong> (Falso)</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd;">0V</td>
+                            <td style="padding: 8px; text-align: center; border: 1px solid #ddd; color: var(--texto-suave); font-weight: bold;">Apagado <i class="fa-regular fa-lightbulb"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Conceitos Fundamentais -->
+            <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid var(--verde-principal);">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-lightbulb"></i> Polaridade do LED</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">O LED tem lado certo! O <strong>Anodo</strong> (perna maior) é o positivo e o <strong>Catodo</strong> (perna menor) é o negativo.</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-bolt"></i> Resistor</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Usado para limitar a corrente elétrica. Sem ele, o LED pode receber muita energia e queimar.</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #e67e22;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-microchip"></i> Pinos Digitais</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">Funcionam apenas com dois estados: ligado (HIGH) ou desligado (LOW).</p>
+                </div>
+                <div style="background: var(--cinza-bg); padding: 15px; border-radius: 8px; border-left: 4px solid #8e44ad;">
+                    <h5 style="color: var(--roxo-escuro); margin-bottom: 5px;"><i class="fa-solid fa-code"></i> Estrutura do Código</h5>
+                    <p style="font-size: 13px; color: var(--texto-suave); margin: 0;">O <code>setup()</code> roda apenas uma vez no início, enquanto o <code>loop()</code> repete os comandos para sempre.</p>
+                </div>
+            </div>
         </div>
 
     </main>
