@@ -1,3 +1,4 @@
+/* ===== VARIÁVEIS ===== */
 :root {
     --verde-principal: #007A55;
     --verde-escuro: #006344;
@@ -9,6 +10,7 @@
     --borda: #e5e7eb;
 }
 
+/* ===== RESET E BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +27,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- MENU DE NAVEGAÇÃO SUPERIOR --- */
+/* ===== NAVBAR ===== */
 .navbar {
     background-color: var(--roxo-escuro);
     padding: 15px 5%;
@@ -69,8 +71,8 @@ body {
     transition: 0.3s;
 }
 
-.nav-links li a:hover { 
-    color: var(--verde-principal); 
+.nav-links li a:hover {
+    color: var(--verde-principal);
 }
 
 .btn-nav {
@@ -80,11 +82,11 @@ body {
     border-radius: 6px;
 }
 
-.btn-nav:hover { 
-    background-color: var(--verde-escuro); 
+.btn-nav:hover {
+    background-color: var(--verde-escuro);
 }
 
-/* --- CONTEÚDO DA ATIVIDADE --- */
+/* ===== MAIN CONTENT ===== */
 .main-content {
     flex: 1;
     margin: 100px auto 40px;
@@ -93,6 +95,7 @@ body {
     padding: 0 5%;
 }
 
+/* ===== HEADER ===== */
 .header-activity {
     display: flex;
     align-items: center;
@@ -111,8 +114,8 @@ body {
     margin-bottom: 5px;
 }
 
-.header-text p { 
-    color: var(--texto-suave); 
+.header-text p {
+    color: var(--texto-suave);
 }
 
 .badge {
@@ -122,25 +125,34 @@ body {
     letter-spacing: 1px;
 }
 
-/* Cores específicas para a Atividade 4 (Azul/Laranja) */
-.header-icon {
-    font-size: 45px;
-    color: #2980b9;
-    background: #eaf4fb;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
+.card-icon img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
-/* --- SISTEMA DE ABAS --- */
+/* ===== ABAS ===== */
 .tabs {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
     border-bottom: 2px solid var(--borda);
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--verde-principal) var(--borda);
+}
+
+.tabs::-webkit-scrollbar {
+    height: 6px;
+}
+.tabs::-webkit-scrollbar-track {
+    background: var(--borda);
+    border-radius: 4px;
+}
+.tabs::-webkit-scrollbar-thumb {
+    background-color: var(--verde-principal);
+    border-radius: 4px;
 }
 
 .tab-btn {
@@ -154,10 +166,11 @@ body {
     transition: 0.3s;
     border-bottom: 3px solid transparent;
     margin-bottom: -2px;
+    white-space: nowrap;
 }
 
-.tab-btn:hover { 
-    color: var(--verde-principal); 
+.tab-btn:hover {
+    color: var(--verde-principal);
 }
 
 .tab-btn.active {
@@ -175,14 +188,8 @@ body {
 }
 
 @keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(10px); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .content-area h2 {
@@ -191,7 +198,7 @@ body {
     color: var(--roxo-escuro);
 }
 
-/* --- GRID DE RECURSOS --- */
+/* ===== RESOURCE GRID ===== */
 .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -229,26 +236,27 @@ body {
     font-size: 22px;
     color: #fff;
     margin-bottom: 15px;
+    overflow: hidden;
 }
 
-.icon-video { background: #e74c3c; }
-.icon-pdf { background: #f39c12; }
-.icon-forms { background: #3498db; }
-.icon-code { background: #34495e; }
+.icon-video  { background: #e74c3c; }
+.icon-pdf    { background: #f39c12; }
+.icon-forms  { background: #3498db; }
+.icon-code   { background: #34495e; }
 .icon-diagram { background: #27ae60; }
 
-.resource-card h3 { 
-    font-size: 16px; 
-    margin-bottom: 5px; 
-    color: var(--roxo-escuro); 
+.resource-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--roxo-escuro);
 }
 
-.resource-card p { 
-    font-size: 13px; 
-    color: var(--texto-suave); 
+.resource-card p {
+    font-size: 13px;
+    color: var(--texto-suave);
 }
 
-/* --- PASSO A PASSO --- */
+/* ===== PASSO A PASSO ===== */
 .passo-lista {
     padding-left: 20px;
     line-height: 2.2;
@@ -269,7 +277,94 @@ body {
     color: var(--roxo-escuro);
 }
 
-/* --- RODAPÉ --- */
+/* ===== CÓDIGO ===== */
+.code-block {
+    margin-top: 30px;
+    background: var(--cinza-bg);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.code-block h4 {
+    margin-bottom: 10px;
+    color: var(--roxo-escuro);
+    font-size: 1.2rem;
+}
+
+pre {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: clamp(12px, 1.2vw, 14px);
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* ===== TABELA ===== */
+.table-wrapper {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.table-wrapper h4 {
+    margin-bottom: 15px;
+    color: var(--roxo-escuro);
+    font-size: 1.2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 500px;
+}
+
+thead tr {
+    background: var(--roxo-escuro);
+    color: white;
+}
+
+th, td {
+    padding: 10px 8px;
+    text-align: center;
+    border: 1px solid var(--borda);
+}
+
+/* ===== CONCEITOS ===== */
+.conceitos-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.conceito-card {
+    background: var(--cinza-bg);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--verde-principal);
+}
+.conceito-card:nth-child(2) { border-left-color: #3498db; }
+.conceito-card:nth-child(3) { border-left-color: #e67e22; }
+.conceito-card:nth-child(4) { border-left-color: #8e44ad; }
+
+.conceito-card h5 {
+    color: var(--roxo-escuro);
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.conceito-card p {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    margin: 0;
+}
+
+/* ===== FOOTER ===== */
 .footer {
     background-color: var(--roxo-escuro);
     color: #b2bec3;
@@ -277,43 +372,43 @@ body {
     margin-top: auto;
 }
 
-.footer-content { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    gap: 30px; 
-    margin-bottom: 30px; 
-    border-bottom: 1px solid rgba(255,255,255,0.1); 
-    padding-bottom: 30px; 
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 30px;
 }
 
-.footer-col h4 { 
-    color: var(--branco); 
-    margin-bottom: 15px; 
-    font-size: 18px; 
+.footer-col h4 {
+    color: var(--branco);
+    margin-bottom: 15px;
+    font-size: 18px;
 }
 
-.footer-col ul { 
-    list-style: none; 
+.footer-col ul {
+    list-style: none;
 }
 
-.footer-col ul li { 
-    margin-bottom: 10px; 
+.footer-col ul li {
+    margin-bottom: 10px;
 }
 
-.footer-col ul li a { 
-    color: #b2bec3; 
-    text-decoration: none; 
-    transition: 0.3s; 
+.footer-col ul li a {
+    color: #b2bec3;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.footer-col ul li a:hover { 
-    color: var(--verde-principal); 
+.footer-col ul li a:hover {
+    color: var(--verde-principal);
 }
 
-.footer-bottom { 
-    text-align: center; 
-    font-size: 14px; 
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
 }
 
 .footer-logo {
@@ -328,27 +423,26 @@ body {
     display: block;
 }
 
-/* =========================================
-   RESPONSIVIDADE APRIMORADA
-   ========================================= */
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
 
-/* 1. Telas Médias (Tablets e Laptops pequenos) - até 992px */
+/* Tablets e telas médias */
 @media (max-width: 992px) {
     .main-content {
         margin-top: 120px;
     }
 }
 
-/* 2. Telas Pequenas (Smartphones e Tablets em pé) - até 768px */
+/* Smartphones e tablets em pé */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         padding: 15px 5%;
         gap: 15px;
     }
-    
+
     .nav-links {
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
@@ -358,32 +452,22 @@ body {
         margin-top: 170px;
         padding: 0 5%;
     }
-    
-    .header-activity { 
-        flex-direction: column; 
-        text-align: center; 
-        gap: 15px; 
+
+    .header-activity {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
         padding: 25px 20px;
     }
-    
-    .tabs { 
-        overflow-x: auto; 
-        white-space: nowrap; 
-        padding-bottom: 8px;
-        scrollbar-width: thin;
-        scrollbar-color: var(--verde-principal) var(--borda);
+
+    .header-text h1 {
+        font-size: 24px;
     }
 
-    .tabs::-webkit-scrollbar {
-        height: 6px;
-    }
-    .tabs::-webkit-scrollbar-track {
-        background: var(--borda);
-        border-radius: 4px;
-    }
-    .tabs::-webkit-scrollbar-thumb {
-        background-color: var(--verde-principal);
-        border-radius: 4px;
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 8px;
     }
 
     .tab-btn {
@@ -394,29 +478,93 @@ body {
     .content-area {
         padding: 25px 20px;
     }
+
+    /* Tabela vira cards */
+    table {
+        min-width: 0;
+        font-size: 0.8rem;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        display: block;
+        background: white;
+        border: 1px solid var(--borda);
+        border-radius: 8px;
+        margin-bottom: 12px;
+        padding: 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    tbody tr td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+        border: none;
+        border-bottom: 1px solid #eee;
+        text-align: right;
+    }
+    tbody tr td:last-child {
+        border-bottom: none;
+    }
+
+    tbody tr td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--roxo-escuro);
+        text-align: left;
+        flex: 1;
+    }
+
+    .logo img {
+        width: 155px;
+        max-height: 52px;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+    .footer-logo img {
+        width: 155px;
+    }
+
+    .conceitos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    pre {
+        font-size: 11px;
+        padding: 10px;
+    }
 }
 
-/* 3. Telas Muito Pequenas (Smartphones pequenos) - até 480px */
+/* Smartphones pequenos */
 @media (max-width: 480px) {
-    .nav-links li a {
-        font-size: 14px; 
+    body {
+        padding: 0;
+    }
+
+    .main-content {
+        padding: 0 4%;
+        margin-top: 180px;
     }
 
     .header-text h1 {
-        font-size: 24px;
+        font-size: 22px;
     }
-    
-    .header-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 30px;
-        border-radius: 12px;
+
+    .header-activity {
+        padding: 20px 15px;
     }
 
     .resource-card {
         padding: 20px 15px;
     }
-    
+
     .resource-icon {
         width: 45px;
         height: 45px;
@@ -428,28 +576,11 @@ body {
         text-align: center;
         align-items: center;
     }
-    
+
     .footer-col {
         width: 100%;
     }
-}
 
-@media (max-width: 768px) {
-    .logo img {
-        width: 155px;
-        max-height: 52px;
-    }
-
-    .footer-logo {
-        justify-content: center;
-    }
-
-    .footer-logo img {
-        width: 155px;
-    }
-}
-
-@media (max-width: 480px) {
     .logo img {
         width: 140px;
         max-height: 48px;
@@ -457,5 +588,41 @@ body {
 
     .footer-logo img {
         width: 145px;
+    }
+
+    .tab-btn {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .content-area {
+        padding: 20px 15px;
+    }
+
+    .passo-lista {
+        font-size: 14px;
+        padding-left: 15px;
+    }
+
+    .conceito-card h5 {
+        font-size: 0.9rem;
+    }
+    .conceito-card p {
+        font-size: 0.75rem;
+    }
+
+    pre {
+        font-size: 10px;
+        padding: 8px;
+        line-height: 1.6;
+    }
+
+    .code-block {
+        padding: 12px;
+    }
+
+    .table-wrapper h4,
+    .code-block h4 {
+        font-size: 1rem;
     }
 }

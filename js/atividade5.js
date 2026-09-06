@@ -1,4 +1,4 @@
-// JavaScript para controle das abas na Atividade 4
+// Controle de abas - Atividade 4 (modernizado)
 document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = {
@@ -10,8 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function activateTab(tabId) {
         // Remove classe active de todas as abas
         tabs.forEach(tab => tab.classList.remove('active'));
-        
-        // Adiciona classe active na aba clicada
+        // Adiciona active na aba clicada
         const activeTab = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
         if (activeTab) activeTab.classList.add('active');
 
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Adiciona evento de clique para cada aba
+    // Event listeners
     tabs.forEach(tab => {
         tab.addEventListener('click', function() {
             const tabId = this.getAttribute('data-tab');
