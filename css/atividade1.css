@@ -324,7 +324,8 @@ body {
 /* 1. Telas Médias (Tablets e Laptops pequenos) - até 992px */
 @media (max-width: 992px) {
     .main-content {
-        margin-top: 120px; /* Mais espaço para o menu não sobrepor o conteúdo */
+      padding-bottom: 10px !important;
+        gap: 12px !important;
     }
 }
 
@@ -336,6 +337,24 @@ body {
         padding: 15px 5%;
         gap: 15px;
     }
+
+    /* 2. Zera a compensação de menu fixo que não é mais necessária */
+    main,
+    .main-content,
+    .container,
+    .atividade-container,
+    .hero-atividade {
+        padding-top: 20px !important; /* Ajuste para 15px ou 20px */
+        margin-top: 0 !important;
+    }
+
+    /* 3. Reduz a margem superior do primeiro card/bloco da atividade */
+    .card-atividade,
+    .atividade-header,
+    .badge-atividade {
+        margin-top: 10px !important;
+    }
+
     
     .nav-links {
         display: flex;

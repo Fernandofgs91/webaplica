@@ -21,9 +21,8 @@ body {
     background-color: var(--cinza-bg);
     color: var(--texto);
     line-height: 1.6;
-    padding-top: 0 !important; /* Remove o espaço que deixava o fundo cinza/branco vazar */
-}   
-
+    padding-top: 0 !important;
+}
 
 /* ===============================
    NAVBAR PRINCIPAL
@@ -38,22 +37,14 @@ body {
     align-items: center;
     padding: 16px 5%;
     z-index: 1000;
-    
-    /* 1. NO TOPO: Cor 100% sólida e sem transparência */
     background-color: #1a1a3a;
-    
-    /* 2. ELIMINAÇÃO TOTAL DA LINHA BRANCA */
     border: none !important;
     border-bottom: none !important;
     outline: none !important;
-    
-    /* Sombra neutra escura (sem luz inferior) */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-    
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
 }
 
-/* Pseudo-elemento de segurança anti-linha branca (tampa qualquer gap de 1px de subpixel) */
 .navbar::after {
     content: '';
     position: absolute;
@@ -66,15 +57,15 @@ body {
     z-index: -1;
 }
 
-/* 3. AO ROLAR A PÁGINA: Ativa a transparência e o efeito blur */
 .navbar.scrolled {
-    background-color: rgba(26, 26, 58, 0.82); /* Roxo com transparência */
+    background-color: rgba(26, 26, 58, 0.82);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
     padding-top: 12px;
     padding-bottom: 12px;
 }
+
 /* ===============================
    LOGO
    =============================== */
@@ -126,7 +117,6 @@ body {
     transition: color 0.25s ease;
 }
 
-/* Linha animada exclusiva para links comuns de texto */
 .nav-links li a:not(.btn-nav):not(.btn-nav-menu)::after {
     content: '';
     position: absolute;
@@ -152,21 +142,15 @@ body {
    =============================== */
 .btn-nav,
 .btn-nav-menu {
-    display: inline-flex !important; 
+    display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px;
-    
-    /* Espaçamento interno amplo e simétrico */
-    padding: 14px 30px !important; 
-    
+    padding: 14px 30px !important;
     background: linear-gradient(135deg, var(--verde-principal), #00b368) !important;
     color: #ffffff !important;
-    
-    /* Remove qualquer sublinhado */
     text-decoration: none !important;
     border-bottom: none !important;
-    
     border-radius: 9999px;
     border: none;
     font-size: 0.95rem;
@@ -179,7 +163,6 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-/* Elimina qualquer traço inferior animado vindo do pai */
 .btn-nav::after,
 .btn-nav-menu::after {
     display: none !important;
@@ -254,9 +237,9 @@ body {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
-                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.25s;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0.25s;
     z-index: 1001;
 }
 
@@ -309,7 +292,7 @@ body {
 .hero {
     background: linear-gradient(135deg, var(--roxo-escuro) 0%, #2c2c54 100%);
     color: var(--branco);
-    padding: 120px 5% 80px; /* 120px no topo dá o espaço perfeito para o texto não bater na navbar */
+    padding: 120px 5% 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -459,9 +442,17 @@ body {
     border-radius: 10px;
 }
 
-.led { background-color: #f39c12; }
-.botao { background-color: #2980b9; }
-.sensor { background-color: #8e44ad; }
+.led {
+    background-color: #f39c12;
+}
+
+.botao {
+    background-color: #2980b9;
+}
+
+.sensor {
+    background-color: #8e44ad;
+}
 
 .card h3 {
     font-size: 18px;
@@ -647,43 +638,43 @@ body {
     margin-top: auto;
 }
 
-.footer-content { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    gap: 30px; 
-    margin-bottom: 30px; 
-    border-bottom: 1px solid rgba(255,255,255,0.1); 
-    padding-bottom: 30px; 
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
 }
 
-.footer-col h4 { 
-    color: var(--branco); 
-    margin-bottom: 15px; 
-    font-size: 18px; 
+.footer-col h4 {
+    color: var(--branco);
+    margin-bottom: 15px;
+    font-size: 18px;
 }
 
-.footer-col ul { 
-    list-style: none; 
+.footer-col ul {
+    list-style: none;
 }
 
-.footer-col ul li { 
-    margin-bottom: 10px; 
+.footer-col ul li {
+    margin-bottom: 10px;
 }
 
-.footer-col ul li a { 
-    color: #b2bec3; 
-    text-decoration: none; 
-    transition: 0.3s; 
+.footer-col ul li a {
+    color: #b2bec3;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.footer-col ul li a:hover { 
-    color: var(--verde-principal); 
+.footer-col ul li a:hover {
+    color: var(--verde-principal);
 }
 
-.footer-bottom { 
-    text-align: center; 
-    font-size: 14px; 
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
 }
 
 .footer-logo {
@@ -698,203 +689,237 @@ body {
     display: block;
 }
 
-/* =========================================
-   RESPONSIVIDADE AJUSTADA (SEM SOBREPOSIÇÃO)
-   ========================================= */
+/* ===================================================
+   RESPONSIVIDADE COMPLETA E OTIMIZADA (SEM FAIXA BRANCA)
+   =================================================== */
 
-/* 1. Telas Médias (<= 992px) */
+/* 1. Telas Médias / Tablets Grandes (<= 992px) */
 @media (max-width: 992px) {
-    .hero {
-        padding: 60px 5%;
-        gap: 30px;
-        min-height: auto;
+    body {
+        padding-top: 0 !important;
     }
-    
+
+    .navbar {
+        padding: 12px 3% !important;
+    }
+
+    .nav-links {
+        gap: 14px !important;
+    }
+
+    .nav-links a {
+        font-size: 14px !important;
+    }
+
+    .btn-nav,
+    .btn-nav-menu {
+        padding: 8px 14px !important;
+        font-size: 0.85rem !important;
+        white-space: nowrap !important;
+    }
+
+    .hero {
+        padding: 120px 5% 50px !important;
+        gap: 25px !important;
+        min-height: auto !important;
+        align-items: center !important;
+    }
+
     .hero-text h1 {
-        font-size: 36px;
+        font-size: 32px !important;
+        line-height: 1.25 !important;
+        margin-top: 0 !important;
+    }
+
+    .hero-text p {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
     }
 
     .hero-image img {
-        max-width: 480px;
+        max-width: 360px !important;
+        width: 100% !important;
+        height: auto !important;
     }
 
     .features-grid,
     .cards-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+        gap: 20px !important;
     }
 }
 
-/* 2. Tablets e Smartphones (<= 768px) */
+/* 2. Tablets Verticais e Smartphones Médios (<= 768px) */
 @media (max-width: 768px) {
-    /* Libera o padding-top fixo do body */
     body {
-        padding-top: 0;
+        padding-top: 0 !important;
     }
 
-    /* Torna a barra relativa: o menu empilha e flui naturalmente sem tampar nada */
     .navbar {
-        position: relative;
-        flex-direction: column;
-        padding: 16px 5%;
-        gap: 16px;
-    }
-    
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        flex-direction: column !important;
+        padding: 16px 5% !important;
+        gap: 16px !important;
     }
 
-    /* Hero agora tem respiro adequado sem correr o risco de ficar debaixo do menu */
+    .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 14px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+    }
+
     .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 5% 50px;
-        gap: 30px;
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 30px 5% 45px !important;
+        gap: 25px !important;
     }
 
     .hero-text {
-        max-width: 100%;
+        max-width: 100% !important;
     }
 
     .hero-text p {
-        margin: 0 auto 20px auto;
+        margin: 0 auto 20px auto !important;
     }
 
     .hero-image img {
-        width: 90%;
-        max-width: 450px;
+        width: 100% !important;
+        max-width: 380px !important;
+        height: auto !important;
     }
 
     .sobre-curso,
     .objetivo,
     .atividades {
-        padding: 50px 5%;
+        padding: 45px 5% !important;
     }
 
     .section-title {
-        font-size: 28px;
-        margin-bottom: 30px;
+        font-size: 26px !important;
+        margin-bottom: 25px !important;
     }
 
     .features-grid,
     .cards-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
+        grid-template-columns: 1fr !important;
+        max-width: 480px !important;
+        margin: 0 auto !important;
     }
 
     .mission-card {
-        padding: 28px 24px;
+        padding: 24px 20px !important;
     }
 
     .finalidade-unificada {
-        padding: 25px 20px;
-        margin-top: 40px;
+        padding: 22px 18px !important;
+        margin-top: 35px !important;
     }
-    
+
     .finalidade-texto p {
-        font-size: 15px;
+        font-size: 15px !important;
+    }
+
+    .logo img,
+    .footer-logo img {
+        width: 150px !important;
     }
 
     .logo img {
-        width: 155px;
-        max-height: 52px;
+        max-height: 50px !important;
     }
 
     .footer-content {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 30px;
+        flex-direction: column !important;
+        text-align: center !important;
+        align-items: center !important;
+        gap: 25px !important;
     }
 
     .footer-col {
-        width: 100%;
-        max-width: 400px;
+        width: 100% !important;
+        max-width: 400px !important;
     }
 
     .footer-logo {
-        justify-content: center;
-    }
-
-    .footer-logo img {
-        width: 155px;
+        justify-content: center !important;
     }
 }
 
-/* 3. Smartphones pequenos (<= 480px) */
+/* 3. Smartphones Pequenos (<= 480px) */
 @media (max-width: 480px) {
     .hero-text h1 {
-        font-size: 28px;
+        font-size: 24px !important;
+        line-height: 1.25 !important;
     }
 
     .hero-text p {
-        font-size: 16px;
+        font-size: 15px !important;
     }
 
     .hero-image img {
-        width: 100%;
-        max-width: 380px;
+        max-width: 300px !important;
     }
 
     .nav-links li a {
-        font-size: 14px;
+        font-size: 13.5px !important;
     }
 
-    /* Mantém o padding do botão confortável no mobile */
     .btn-nav,
     .btn-nav-menu {
-        padding: 10px 22px !important;
-        font-size: 0.88rem;
+        padding: 9px 18px !important;
+        font-size: 0.82rem !important;
     }
 
     .feature-card,
     .card {
-        padding: 20px 18px;
+        padding: 18px 16px !important;
     }
 
     .feature-card h3 {
-        font-size: 18px;
+        font-size: 17px !important;
     }
 
     .feature-card p,
     .card p {
-        font-size: 14px;
+        font-size: 13.5px !important;
     }
 
     .card-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 19px !important;
     }
 
     .card h3 {
-        font-size: 17px;
-    }
-
-    .footer-content {
-        gap: 25px;
+        font-size: 16px !important;
     }
 
     .finalidade-unificada {
-        padding: 20px 15px;
-        border-left-width: 3px;
+        padding: 18px 14px !important;
+        border-left-width: 3px !important;
     }
-    
+
     .finalidade-divider span {
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        font-size: 18px;
+        width: 36px !important;
+        height: 36px !important;
+        line-height: 36px !important;
+        font-size: 16px !important;
+    }
+
+    .logo img,
+    .footer-logo img {
+        width: 130px !important;
     }
 
     .logo img {
-        width: 140px;
-        max-height: 48px;
-    }
-
-    .footer-logo img {
-        width: 145px;
+        max-height: 42px !important;
     }
 }

@@ -36,7 +36,7 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -69,8 +69,8 @@ body {
     transition: 0.3s;
 }
 
-.nav-links li a:hover { 
-    color: var(--verde-principal); 
+.nav-links li a:hover {
+    color: var(--verde-principal);
 }
 
 .btn-nav {
@@ -80,8 +80,8 @@ body {
     border-radius: 6px;
 }
 
-.btn-nav:hover { 
-    background-color: var(--verde-escuro); 
+.btn-nav:hover {
+    background-color: var(--verde-escuro);
 }
 
 /* --- CONTEÚDO DA ATIVIDADE --- */
@@ -102,7 +102,7 @@ body {
     border-radius: 12px;
     border: 1px solid var(--borda);
     margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .header-text h1 {
@@ -111,8 +111,8 @@ body {
     margin-bottom: 5px;
 }
 
-.header-text p { 
-    color: var(--texto-suave); 
+.header-text p {
+    color: var(--texto-suave);
 }
 
 .badge {
@@ -156,8 +156,8 @@ body {
     margin-bottom: -2px;
 }
 
-.tab-btn:hover { 
-    color: var(--verde-principal); 
+.tab-btn:hover {
+    color: var(--verde-principal);
 }
 
 .tab-btn.active {
@@ -171,17 +171,18 @@ body {
     border: 1px solid var(--borda);
     padding: 35px;
     animation: fadeIn 0.4s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 @keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(10px); 
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -231,21 +232,35 @@ body {
     margin-bottom: 15px;
 }
 
-.icon-video { background: #e74c3c; }
-.icon-pdf { background: #f39c12; }
-.icon-forms { background: #3498db; }
-.icon-code { background: #34495e; }
-.icon-diagram { background: #27ae60; }
-
-.resource-card h3 { 
-    font-size: 16px; 
-    margin-bottom: 5px; 
-    color: var(--roxo-escuro); 
+.icon-video {
+    background: #e74c3c;
 }
 
-.resource-card p { 
-    font-size: 13px; 
-    color: var(--texto-suave); 
+.icon-pdf {
+    background: #f39c12;
+}
+
+.icon-forms {
+    background: #3498db;
+}
+
+.icon-code {
+    background: #34495e;
+}
+
+.icon-diagram {
+    background: #27ae60;
+}
+
+.resource-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--roxo-escuro);
+}
+
+.resource-card p {
+    font-size: 13px;
+    color: var(--texto-suave);
 }
 
 /* --- PASSO A PASSO --- */
@@ -277,43 +292,43 @@ body {
     margin-top: auto;
 }
 
-.footer-content { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    gap: 30px; 
-    margin-bottom: 30px; 
-    border-bottom: 1px solid rgba(255,255,255,0.1); 
-    padding-bottom: 30px; 
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
 }
 
-.footer-col h4 { 
-    color: var(--branco); 
-    margin-bottom: 15px; 
-    font-size: 18px; 
+.footer-col h4 {
+    color: var(--branco);
+    margin-bottom: 15px;
+    font-size: 18px;
 }
 
-.footer-col ul { 
-    list-style: none; 
+.footer-col ul {
+    list-style: none;
 }
 
-.footer-col ul li { 
-    margin-bottom: 10px; 
+.footer-col ul li {
+    margin-bottom: 10px;
 }
 
-.footer-col ul li a { 
-    color: #b2bec3; 
-    text-decoration: none; 
-    transition: 0.3s; 
+.footer-col ul li a {
+    color: #b2bec3;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.footer-col ul li a:hover { 
-    color: var(--verde-principal); 
+.footer-col ul li a:hover {
+    color: var(--verde-principal);
 }
 
-.footer-bottom { 
-    text-align: center; 
-    font-size: 14px; 
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
 }
 
 .footer-logo {
@@ -335,19 +350,39 @@ body {
 /* 1. Telas Médias (Tablets e Laptops pequenos) - até 992px */
 @media (max-width: 992px) {
     .main-content {
-        margin-top: 120px; /* Mais espaço para o menu não sobrepor o conteúdo */
+        margin-top: 120px;
+        /* Mais espaço para o menu não sobrepor o conteúdo */
     }
 }
 
 /* 2. Telas Pequenas (Smartphones e Tablets em pé) - até 768px */
 @media (max-width: 768px) {
+
     /* Ajuste do Menu: Empilha os itens em vez de escondê-los */
     .navbar {
         flex-direction: column;
         padding: 15px 5%;
-        gap: 15px;
+        padding-bottom: 10px !important;
+        gap: 12px !important;
     }
-    
+
+    main,
+    .main-content,
+    .container,
+    .atividade-container,
+    .hero-atividade {
+        padding-top: 20px !important;
+        /* Ajuste para 15px ou 20px */
+        margin-top: 0 !important;
+    }
+
+    /* 3. Reduz a margem superior do primeiro card/bloco da atividade */
+    .card-atividade,
+    .atividade-header,
+    .badge-atividade {
+        margin-top: 10px !important;
+    }
+
     .nav-links {
         display: flex;
         flex-wrap: wrap;
@@ -357,21 +392,22 @@ body {
 
     /* Ajuste do Conteúdo Principal */
     .main-content {
-        margin-top: 170px; /* Aumenta a margem pois o menu ficou mais alto */
+        margin-top: 170px;
+        /* Aumenta a margem pois o menu ficou mais alto */
         padding: 0 5%;
     }
-    
-    .header-activity { 
-        flex-direction: column; 
-        text-align: center; 
-        gap: 15px; 
+
+    .header-activity {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
         padding: 25px 20px;
     }
-    
+
     /* Melhoria no scroll horizontal das Abas */
-    .tabs { 
-        overflow-x: auto; 
-        white-space: nowrap; 
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
         padding-bottom: 8px;
         /* Estilização suave para a barra de rolagem */
         scrollbar-width: thin;
@@ -381,10 +417,12 @@ body {
     .tabs::-webkit-scrollbar {
         height: 6px;
     }
+
     .tabs::-webkit-scrollbar-track {
         background: var(--borda);
         border-radius: 4px;
     }
+
     .tabs::-webkit-scrollbar-thumb {
         background-color: var(--verde-principal);
         border-radius: 4px;
@@ -403,13 +441,13 @@ body {
 /* 3. Telas Muito Pequenas (Smartphones pequenos) - até 480px */
 @media (max-width: 480px) {
     .nav-links li a {
-        font-size: 14px; 
+        font-size: 14px;
     }
 
     .header-text h1 {
         font-size: 24px;
     }
-    
+
     .header-icon {
         width: 60px;
         height: 60px;
@@ -420,7 +458,7 @@ body {
     .resource-card {
         padding: 20px 15px;
     }
-    
+
     .resource-icon {
         width: 45px;
         height: 45px;
@@ -433,7 +471,7 @@ body {
         text-align: center;
         align-items: center;
     }
-    
+
     .footer-col {
         width: 100%;
     }

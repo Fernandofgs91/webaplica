@@ -38,7 +38,7 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -105,7 +105,7 @@ body {
     border-radius: 12px;
     border: 1px solid var(--borda);
     margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .header-text h1 {
@@ -146,10 +146,12 @@ body {
 .tabs::-webkit-scrollbar {
     height: 6px;
 }
+
 .tabs::-webkit-scrollbar-track {
     background: var(--borda);
     border-radius: 4px;
 }
+
 .tabs::-webkit-scrollbar-thumb {
     background-color: var(--verde-principal);
     border-radius: 4px;
@@ -184,12 +186,19 @@ body {
     border: 1px solid var(--borda);
     padding: 35px;
     animation: fadeIn 0.4s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .content-area h2 {
@@ -239,11 +248,25 @@ body {
     overflow: hidden;
 }
 
-.icon-video  { background: #e74c3c; }
-.icon-pdf    { background: #f39c12; }
-.icon-forms  { background: #3498db; }
-.icon-code   { background: #34495e; }
-.icon-diagram { background: #27ae60; }
+.icon-video {
+    background: #e74c3c;
+}
+
+.icon-pdf {
+    background: #f39c12;
+}
+
+.icon-forms {
+    background: #3498db;
+}
+
+.icon-code {
+    background: #34495e;
+}
+
+.icon-diagram {
+    background: #27ae60;
+}
 
 .resource-card h3 {
     font-size: 16px;
@@ -328,7 +351,8 @@ thead tr {
     color: white;
 }
 
-th, td {
+th,
+td {
     padding: 10px 8px;
     text-align: center;
     border: 1px solid var(--borda);
@@ -348,9 +372,18 @@ th, td {
     border-radius: 8px;
     border-left: 4px solid var(--verde-principal);
 }
-.conceito-card:nth-child(2) { border-left-color: #3498db; }
-.conceito-card:nth-child(3) { border-left-color: #e67e22; }
-.conceito-card:nth-child(4) { border-left-color: #8e44ad; }
+
+.conceito-card:nth-child(2) {
+    border-left-color: #3498db;
+}
+
+.conceito-card:nth-child(3) {
+    border-left-color: #e67e22;
+}
+
+.conceito-card:nth-child(4) {
+    border-left-color: #8e44ad;
+}
 
 .conceito-card h5 {
     color: var(--roxo-escuro);
@@ -378,7 +411,7 @@ th, td {
     justify-content: space-between;
     gap: 30px;
     margin-bottom: 30px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 30px;
 }
 
@@ -439,7 +472,26 @@ th, td {
     .navbar {
         flex-direction: column;
         padding: 15px 5%;
-        gap: 15px;
+        padding-bottom: 10px !important;
+        gap: 12px !important;
+    }
+
+    /* 2. Zera a compensação de menu fixo que não é mais necessária */
+    main,
+    .main-content,
+    .container,
+    .atividade-container,
+    .hero-atividade {
+        padding-top: 20px !important;
+        /* Ajuste para 15px ou 20px */
+        margin-top: 0 !important;
+    }
+
+    /* 3. Reduz a margem superior do primeiro card/bloco da atividade */
+    .card-atividade,
+    .atividade-header,
+    .badge-atividade {
+        margin-top: 10px !important;
     }
 
     .nav-links {
@@ -496,7 +548,7 @@ th, td {
         border-radius: 8px;
         margin-bottom: 12px;
         padding: 12px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
     }
 
     tbody tr td {
@@ -508,6 +560,7 @@ th, td {
         border-bottom: 1px solid #eee;
         text-align: right;
     }
+
     tbody tr td:last-child {
         border-bottom: none;
     }
@@ -528,6 +581,7 @@ th, td {
     .footer-logo {
         justify-content: center;
     }
+
     .footer-logo img {
         width: 155px;
     }
@@ -607,6 +661,7 @@ th, td {
     .conceito-card h5 {
         font-size: 0.9rem;
     }
+
     .conceito-card p {
         font-size: 0.75rem;
     }
