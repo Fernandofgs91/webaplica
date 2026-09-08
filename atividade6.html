@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIARTEC - Atividade 06: Micro Servo com Potenciômetro</title>
+    <!-- Ícones e Fontes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="css/atividade5.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Menu Superior -->
+    <nav class="navbar">
+        <a href="#inicio" class="logo" aria-label="CRIARTEC - Início">
+            <img src="img/criartec-logo-transparente.png" alt="CRIARTEC">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#atividades">Outras Atividades</a></li>
+            <li><a href="index.html#inicio" class="btn-nav"><i class="fa-solid fa-arrow-left"></i> Voltar ao Menu</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo da Atividade -->
+    <main class="main-content">
+
+        <!-- Cabeçalho da Aula -->
+        <div class="header-activity">
+            <div class="header-text">
+                <span class="badge">ATIVIDADE 06</span>
+                <h1>Controlando Micro Servo com Potenciômetro</h1>
+                <p>Compreender o controle de servo motores através da leitura de sinais analógicos, utilizando um
+                    potenciômetro para controlar a posição angular de um micro servo em tempo real.</p>
+            </div>
+            <div class="card-icon sensor" style="background-color: transparent; padding: 0;">
+                <img src="img/micro-servo.jpg" alt="Montagem do Micro Servo com Potenciômetro no Arduino"
+                    style="width: 50%; height: 50%; object-fit: cover; border-radius: 8px;">
+            </div>
+        </div>
+
+        <!-- Abas de Navegação -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="sobre">Recursos da Aula</button>
+            <button class="tab-btn" data-tab="materiais">Materiais Extras</button>
+            <button class="tab-btn" data-tab="passo">Passo a passo</button>
+        </div>
+
+        <!-- ABA 1: Recursos da Aula -->
+        <div id="sobre" class="content-area">
+            <h2>Materiais de Estudo</h2>
+
+            <div class="resource-grid">
+                <a href="https://youtu.be/NpnoZ980UMI" target="_blank" class="resource-card">
+                    <div class="resource-icon icon-video">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <h3>Videoaula Completa</h3>
+                    <p>Assista ao passo a passo da montagem e explicação sobre conversão analógica (ADC) e controle
+                        angular do servo via PWM.</p>
+                </a>
+
+                <a href="https://drive.google.com/file/d/16bzqJe6aG_i8ZbeId7Zn9milxAuXjce1/view?usp=sharing"
+                    target="_blank" class="resource-card">
+                    <div class="resource-icon icon-pdf">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h3>Apostila em PDF</h3>
+                    <p>Leia a teoria detalhada sobre entradas analógicas, função map(), a biblioteca Servo.h e
+                        calibração de pulsos.</p>
+                </a>
+
+                <a href="https://forms.gle/aoXNuapJRF16FAw3A" target="_blank" class="resource-card">
+                    <div class="resource-icon icon-forms">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h3>Formulário (Quiz)</h3>
+                    <p>Responda o questionário para validar o seu aprendizado da Aula 06.</p>
+                </a>
+
+                <!-- 4º CARD - TINKERCAD -->
+                <a href="https://www.tinkercad.com/dashboard" target="_blank" class="resource-card">
+                    <div class="resource-icon" style="background: transparent; overflow: hidden;">
+                        <img src="img/logotinkercad.png" alt="Tinkercad"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                    </div>
+                    <h3>Simulação (Tinkercad)</h3>
+                    <p>Acesse o circuito no simulador para interagir com o potenciômetro e observar o servo girando em
+                        tempo real.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- ABA 2: Materiais Extras -->
+        <div id="materiais" class="content-area" style="display: none;">
+            <h2>Arquivos para Download</h2>
+            <div class="resource-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <a href="https://drive.google.com/file/d/1PkjVcKZnDDt3vTVeBzPVcleEPNU4ZxKz/view?usp=sharing"
+                    class="resource-card">
+                    <div class="resource-icon icon-code">
+                        <i class="fa-solid fa-file-code"></i>
+                    </div>
+                    <h3>Código Arduino (.ino)</h3>
+                    <p>Baixe o código com leitura analógica e mapeamento angular para o servo.</p>
+                </a>
+                <a href="https://drive.google.com/file/d/178cLNeajE5NGTzo4FxGwDwBMcF7kKFJT/view?usp=sharing"
+                    class="resource-card">
+                    <div class="resource-icon icon-diagram">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h3>Diagrama Elétrico</h3>
+                    <p>Esquema visual da ligação do potenciômetro e do micro servo na protoboard.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- ABA 3: Passo a Passo -->
+        <div id="passo" class="content-area" style="display: none;">
+            <h2>Instruções Práticas de Montagem e Programação</h2>
+            <ol class="passo-lista">
+                <li>Abra o seu ambiente de simulação no <strong>Tinkercad</strong>.</li>
+                <li>Adicione os seguintes componentes à área de trabalho: <strong>1 Arduino Uno</strong>, <strong>1
+                        Protoboard</strong>, <strong>1 Potenciômetro (10kΩ)</strong> e <strong>1 Micro Servo Motor
+                        SG90</strong>.</li>
+                <li>Alimente os barramentos da protoboard ligando o pino <strong>5V</strong> do Arduino ao trilho
+                    positivo (+) e o pino <strong>GND</strong> ao trilho negativo (-).</li>
+                <li>Conecte os pinos de alimentação do potenciômetro: <strong>Pino 1</strong> ao <strong>5V
+                        (VCC)</strong> e <strong>Pino 3</strong> ao <strong>GND</strong>.</li>
+                <li>Ligue o terminal central do potenciômetro (<strong>Pino 2 - Saída/Sinal</strong>) ao pino analógico
+                    <strong>A0</strong> do Arduino.
+                </li>
+                <li>Conecte os fios de alimentação do micro servo motor: o fio <strong>Vermelho (VCC)</strong> ao
+                    <strong>5V</strong> e o fio <strong>Marrom/Preto (GND)</strong> ao <strong>GND</strong>[cite: 1].
+                </li>
+                <li>Conecte o fio de sinal do servo (<strong>Laranja/Amarelo</strong>) ao pino digital
+                    <strong>7</strong> do Arduino[cite: 1].
+                </li>
+                <li>No editor de código, utilize a biblioteca <code>#include &lt;Servo.h&gt;</code> e inicialize o servo
+                    no <code>setup()</code> usando <code>servo_7.attach(7, 500, 2500)</code>[cite: 1].</li>
+                <li>No <code>loop()</code>, efetue a leitura analógica de A0 com <code>analogRead(A0)</code> e converta
+                    o sinal usando a função de mapeamento
+                    <code>Angulo = map(analogRead(A0), 0, 1023, 0, 180);</code>[cite: 1].
+                </li>
+                <li>Escreva a posição no motor através de <code>servo_7.write(Angulo);</code> e insira um
+                    <code>delay(50);</code> para estabilização do movimento[cite: 1].
+                </li>
+                <li>Inicie a simulação, gire o potenciômetro e veja a haste do servo responder proporcionalmente entre
+                    0° e 180°.!</li>
+            </ol>
+        </div>
+
+    </main>
+
+   <footer class="footer">
+    <div class="footer-content">
+        <!-- Coluna 1: Logo CRIARTEC -->
+        <div class="footer-col" style="max-width: 300px;">
+            <div class="footer-logo">
+                <img src="img/criartec-logo-transparente.png" alt="CRIARTEC">
+            </div>
+            <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual, interativo e divertido através da robótica educacional.</p>
+        </div>
+
+        <!-- Coluna 2: Parceiros e logos -->
+        <div class="footer-col">
+            <!-- <h4 style="color: #ffffff; margin-bottom: 5px;">IFTM Campus Uberlândia Centro</h4> -->
+            <!-- <p style="font-size: 13px; color: #b2bec3; margin-top: 5px;">GPETEC & Clube de Robótica CRIAR</p> -->
+           <img src="img/logoeditar.png" alt="IFTM" style="width:250px; margin-top: 10px;">  
+     
+   
+        </div>
+
+        <!-- Coluna 3: Navegação -->
+        <div class="footer-col">
+            <h4>Navegação Rápida</h4>
+            <ul>
+                <li><a href="index.html#inicio">Início</a></li>
+                <li><a href="index.html#sobre">Sobre o Curso</a></li>
+                <li><a href="index.html#atividades">Trilha de Aulas</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 4: Recursos -->
+        <div class="footer-col">
+            <h4>Recursos</h4>
+            <ul>
+                <li><a href="https://www.tinkercad.com/" target="_blank">Acessar Tinkercad</a></li>
+                <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE" target="_blank">Download Arduino IDE</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Projeto CRIARTEC - IFTM Campus Uberlândia Centro. Desenvolvido para facilitar o ensino de tecnologia.</p>
+    </div>
+</footer>
+    <!-- JavaScript Externo -->
+    <script src="js/atividade5.js"></script>
+</body>
+
+</html>
