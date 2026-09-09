@@ -116,3 +116,57 @@ document.addEventListener('DOMContentLoaded', function() {
       navbar.classList.remove('scrolled');
     }
   });
+
+  (function() {
+            'use strict';
+
+            const modalOverlay = document.getElementById('modalOverlay');
+            const abrirMenuBtn = document.getElementById('abrirModalMenuBtn');
+            const fecharBtn = document.getElementById('fecharModalBtn');
+
+            // Função para abrir o modal
+            function abrirModal() {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                fecharBtn.focus();
+            }
+
+            // Função para fechar o modal
+            function fecharModal() {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                abrirMenuBtn.focus();
+            }
+
+            // Evento de clique no botão do menu
+            if (abrirMenuBtn) {
+                abrirMenuBtn.addEventListener('click', abrirModal);
+            }
+
+            // Evento de clique no botão fechar
+            fecharBtn.addEventListener('click', fecharModal);
+
+            // Evento de clique no overlay (fundo escuro) para fechar
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) {
+                    fecharModal();
+                }
+            });
+
+            // Evento de tecla ESC para fechar
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                    fecharModal();
+                }
+            });
+
+            // Previne que o modal feche ao clicar dentro da caixa
+            const modalBox = document.querySelector('.modal-box');
+            if (modalBox) {
+                modalBox.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+
+            console.log('✅ Modal do CRIARTEC carregado com sucesso!');
+        })();

@@ -7,26 +7,29 @@
     <title>CRIARTEC - Aprenda Robótica com lógica de Programação</title>
     <!-- Ícones e Fontes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <!-- Font Awesome CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <style>
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/index.css">
 
-    </style>
+    
 </head>
 
 <body>
-    <!-- Menu Superior -->
+    <!-- Menu Superior (COM O BOTÃO NO MENU) -->
     <nav class="navbar">
         <a href="#inicio" class="logo" aria-label="CRIARTEC - Início">
             <img src="img/criartec-logo-transparente.png" alt="CRIARTEC">
         </a>
         <ul class="nav-links">
+             <li>
+                <button class="btn-modal-menu" id="abrirModalMenuBtn" aria-label="Como fazer o curso?">
+                    <i class="fa-regular fa-circle-question"></i> Como fazer o curso?
+                </button>
+            </li>
             <li><a href="#inicio">Início</a></li>
             <li><a href="#sobre">O Curso</a></li>
             <li class="dropdown">
@@ -64,7 +67,9 @@
                     </li>
                 </ul>
             </li>
+            <!-- BOTÃO "Ir para Atividades" (existente) -->
             <li><a href="#atividades" class="btn-nav">Ir para Atividades</a></li>
+         
         </ul>
     </nav>
 
@@ -75,7 +80,12 @@
                 <h1>Aprenda robótica e programação <span>na prática!</span></h1>
                 <p>O CRIARTEC é o seu curso interativo para dominar lógica de programação utilizando simulações
                     incríveis no Tinkercad e placas Arduino.</p>
-                <a href="https://forms.gle/tHwwbz9RFhHeSeJ86" class="btn-nav">Fazer Inscrição no Curso de Robótica <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="hero-buttons">
+                    <a href="https://forms.gle/tHwwbz9RFhHeSeJ86" class="btn-nav">
+                        Fazer Inscrição no Curso de Robótica <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <!-- OBS: O botão do hero foi REMOVIDO para ficar apenas no menu, conforme você pediu -->
+                </div>
             </div>
             <div class="hero-image">
                 <img src="img/logorero.png" alt="CRIARTEC - Robótica Educacional">
@@ -221,7 +231,7 @@
         </section>
     </main>
 
-  <!-- Rodapé Completo -->
+    <!-- Rodapé Completo -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-col" style="max-width: 300px;">
@@ -234,10 +244,7 @@
             <!-- Coluna 2: Parceiros e logos -->
             <div class="footer-col">
                 <h4 style="color: #ffffff; margin-bottom: 5px;">IFTM Campus Uberlândia Centro</h4>
-                <!-- <p style="font-size: 13px; color: #b2bec3; margin-top: 5px;">GPETEC & Clube de Robótica CRIAR</p> -->
                 <img src="img/logoeditar.png" alt="IFTM" style="width:250px; margin-top: 10px;">
-
-
             </div>
             <div class="footer-col">
                 <h4>Navegação Rápida</h4>
@@ -261,102 +268,106 @@
         </div>
     </footer>
 
+    <!-- ============================================================
+    MODAL - ROTEIRO DO CURSO
+    ============================================================ -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitulo">📘 Roteiro do Curso</h2>
+                <button class="modal-close" id="fecharModalBtn" aria-label="Fechar janela">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="intro">Para começar o curso, siga o passo a passo abaixo:</p>
+                <ol>
+                    <li>
+                        Clique no botão 
+                        <span class="badge-btn"><i class="fa-solid fa-pen-to-square"></i> Fazer inscrição no curso de robótica</span> 
+                        (disponível na página inicial).
+                    </li>
+                    <li>
+                        Em seguida, vá até o menu e clique em 
+                        <span class="badge-btn secundario"><i class="fa-solid fa-arrow-right"></i> Ir para Atividades</span>.
+                    </li>
+                    <li>
+                        Dentro de cada atividade, você encontrará os seguintes materiais:
+                        <ul class="materiais-list">
+                            <li><i class="fa-solid fa-video"></i> Vídeo explicativo</li>
+                            <li><i class="fa-solid fa-file-pdf"></i> Apostila para download</li>
+                            <li><i class="fa-solid fa-link"></i> Link para acessar o Tinkercad</li>
+                            <li><i class="fa-regular fa-clipboard"></i> Formulário de avaliação</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Complete a <strong>Atividade 01</strong> primeiro. Depois, prossiga clicando nas demais atividades em sequência.
+                    </li>
+                    <li>
+                        <span class="trofeu"><i class="fa-regular fa-circle-check"></i> Ao concluir todas as atividades, você receberá seu certificado automaticamente!</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    JAVASCRIPT - CONTROLE DO MODAL
+    ============================================================ -->
     <script>
-        // // ============================================
-        // // JAVASCRIPT COMPLETO - CRIARTEC
-        // // ============================================
+        (function() {
+            'use strict';
 
-        // // Smooth scroll para links internos
-        // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        //     anchor.addEventListener('click', function(e) {
-        //         const href = this.getAttribute('href');
-        //         if (href === "#") return;
+            const modalOverlay = document.getElementById('modalOverlay');
+            const abrirMenuBtn = document.getElementById('abrirModalMenuBtn');
+            const fecharBtn = document.getElementById('fecharModalBtn');
 
-        //         const target = document.querySelector(href);
-        //         if (target) {
-        //             e.preventDefault();
-        //             const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        //             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 10;
+            // Função para abrir o modal
+            function abrirModal() {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                fecharBtn.focus();
+            }
 
-        //             window.scrollTo({
-        //                 top: targetPosition,
-        //                 behavior: 'smooth'
-        //             });
-        //         }
-        //     });
-        // });
+            // Função para fechar o modal
+            function fecharModal() {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                abrirMenuBtn.focus();
+            }
 
-        // // Menu ativo (destaca o item do menu conforme rolagem)
-        // const sections = document.querySelectorAll('section[id]');
-        // const navLinks = document.querySelectorAll('.nav-links > li > a:not(.btn-nav)');
+            // Evento de clique no botão do menu
+            if (abrirMenuBtn) {
+                abrirMenuBtn.addEventListener('click', abrirModal);
+            }
 
-        // function highlightNavOnScroll() {
-        //     let current = '';
-        //     const scrollY = window.pageYOffset;
-        //     const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            // Evento de clique no botão fechar
+            fecharBtn.addEventListener('click', fecharModal);
 
-        //     sections.forEach(section => {
-        //         const sectionTop = section.offsetTop - navbarHeight - 50;
-        //         const sectionBottom = sectionTop + section.offsetHeight;
+            // Evento de clique no overlay (fundo escuro) para fechar
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) {
+                    fecharModal();
+                }
+            });
 
-        //         if (scrollY >= sectionTop && scrollY < sectionBottom) {
-        //             current = section.getAttribute('id');
-        //         }
-        //     });
+            // Evento de tecla ESC para fechar
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                    fecharModal();
+                }
+            });
 
-        //     navLinks.forEach(link => {
-        //         link.style.color = '#b2bec3';
-        //         if (link.getAttribute('href') === '#' + current) {
-        //             link.style.color = '#009c6d';
-        //         }
-        //     });
-        // }
+            // Previne que o modal feche ao clicar dentro da caixa
+            const modalBox = document.querySelector('.modal-box');
+            if (modalBox) {
+                modalBox.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
 
-        // window.addEventListener('scroll', highlightNavOnScroll);
-
-        // // Animação de entrada para os cards
-        // const cards = document.querySelectorAll('.card, .feature-card');
-
-        // function fadeInCardsOnScroll() {
-        //     cards.forEach(card => {
-        //         const cardTop = card.getBoundingClientRect().top;
-        //         const windowHeight = window.innerHeight;
-
-        //         if (cardTop < windowHeight - 50) {
-        //             card.style.opacity = '1';
-        //             card.style.transform = 'translateY(0)';
-        //         }
-        //     });
-        // }
-
-        // cards.forEach(card => {
-        //     card.style.opacity = '0';
-        //     card.style.transform = 'translateY(30px)';
-        //     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        // });
-
-        // window.addEventListener('scroll', fadeInCardsOnScroll);
-        // window.addEventListener('load', fadeInCardsOnScroll);
-
-        // // Clique no botão "Começar minha jornada"
-        // const startBtn = document.querySelector('.hero .btn-nav');
-        // if (startBtn) {
-        //     startBtn.addEventListener('click', function(e) {
-        //         const target = document.querySelector('#atividades');
-        //         if (target) {
-        //             e.preventDefault();
-        //             const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        //             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 10;
-        //             window.scrollTo({
-        //                 top: targetPosition,
-        //                 behavior: 'smooth'
-        //             });
-        //         }
-        //     });
-        // }
-
-        // console.log('🚀 RoboCode carregado com sucesso!');
-        // console.log('📚 Aprenda robótica e programação na prática!');
+            console.log('✅ Modal do CRIARTEC carregado com sucesso!');
+        })();
     </script>
 </body>
 
