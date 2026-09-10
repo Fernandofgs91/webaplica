@@ -859,6 +859,18 @@
       border-color: rgba(26, 86, 219, 0.2);
   }
 
+  .modal-body ol li strong.badge-btn-tercerio {
+      display: inline-block;
+      background: #b242c185;
+      color: #180119;
+      border: 1px solid rgba(219, 16, 141, 0.445);
+      padding: 3px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 0 2px;
+      white-space: nowrap;
+  }
+
   /* Lista de materiais dentro do modal */
   .materiais-list {
       list-style: none;
