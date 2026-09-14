@@ -457,27 +457,23 @@ td {
 }
 
 /* ===== LOGOS DOS PARCEIROS (RODAPÉ) ===== */
-.footer-parceiros {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    /* Espaçamento entre as logos */
-    flex-wrap: wrap;
-    /* Permite que as logos desçam de linha caso falte espaço */
-}
 
-.footer-parceiros img {
-    width: 100px;
+
+
+.footer-logo img {
+    max-width: 100%;
+    max-height: 46px;
+
+    width: auto;
     height: auto;
+
     object-fit: contain;
-    transition: transform 0.3s ease;
 }
 
-.footer-parceiros img:hover {
-    transform: scale(1.05);
-    /* Efeito opcional de zoom ao passar o mouse */
+.footer-logo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
-
 /* ============================================================
    RESPONSIVIDADE
    ============================================================ */
@@ -498,9 +494,9 @@ td {
         gap: 12px !important;
     }
 
-    .footer-parceiros {
+    .footer-logos {
         justify-content: center;
-        /* Centraliza as logos no celular */
+        align-items: center;
         margin-top: 15px;
     }
 
