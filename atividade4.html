@@ -11,7 +11,7 @@
         rel="stylesheet">
     <link rel="icon" href="img/criartec-logo-transparente.png" type="image/x-png">
     <!-- CSS Externo -->
-    <link rel="stylesheet" href="css/atividade4.css">
+    <link rel="stylesheet" href="css/atividades.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -19,7 +19,7 @@
 <body>
 
     <!-- Menu Superior -->
- <nav class="navbar">
+    <nav class="navbar">
         <a href="#inicio" class="logo" aria-label="CRIARTEC - Início">
             <img src="img/criartec-logo-transparente.png" alt="CRIARTEC">
         </a>
@@ -39,11 +39,12 @@
             <div class="header-text">
                 <span class="badge">ATIVIDADE 04</span>
                 <h1>Controlando a Luz do LED com Potenciômetro</h1>
-                <p>Domine a leitura de sinais analógicos e o controle de intensidade luminosa (PWM) para variar o brilho de um LED em tempo real.</p>
+                <p>Domine a leitura de sinais analógicos e o controle de intensidade luminosa (PWM) para variar o brilho
+                    de um LED em tempo real.</p>
             </div>
             <div class="card-icon sensor" style="background-color: transparent; padding: 0;">
                 <img src="img/potenciometro.jpg" alt="Potenciômetro com LED Arduino"
-                    style="width: 50%; height: 50%; object-fit: cover; border-radius: 8px;">
+                    style="width: 100px; height: auto; object-fit: cover; border-radius: 8px;">
             </div>
         </div>
 
@@ -124,30 +125,35 @@
             <h2>Instruções Práticas</h2>
             <ol class="passo-lista">
                 <li>Abra o seu ambiente de simulação no <strong>Tinkercad</strong>.</li>
-                <li>Adicione uma placa Arduino Uno, uma Protoboard, um potenciômetro de <strong>10kΩ</strong>, um resistor de <strong>220Ω</strong> e um <strong>LED</strong> (qualquer cor).</li>
+                <li>Adicione uma placa Arduino Uno, uma Protoboard, um potenciômetro de <strong>10kΩ</strong>, um
+                    resistor de <strong>220Ω</strong> e um <strong>LED</strong> (qualquer cor).</li>
                 <li>Conecte o <strong>pino 1</strong> do potenciômetro ao <strong>5V</strong> do Arduino.</li>
                 <li>Conecte o <strong>pino 3</strong> do potenciômetro ao <strong>GND</strong> do Arduino.</li>
-                <li>Conecte o <strong>pino 2</strong> (central) do potenciômetro ao pino analógico <strong>A0</strong> do Arduino.</li>
+                <li>Conecte o <strong>pino 2</strong> (central) do potenciômetro ao pino analógico <strong>A0</strong>
+                    do Arduino.</li>
                 <li>Conecte o <strong>catodo</strong> (perna negativa) do LED ao <strong>GND</strong> do Arduino.</li>
-                <li>Conecte o <strong>anodo</strong> (perna positiva) do LED através do resistor de 220Ω ao pino digital <strong>9</strong> (PWM) do Arduino.</li>
-                <li>Insira o código de programação utilizando os comandos <code>analogRead()</code>, <code>map()</code> e <code>analogWrite()</code> para controlar o brilho do LED.</li>
+                <li>Conecte o <strong>anodo</strong> (perna positiva) do LED através do resistor de 220Ω ao pino digital
+                    <strong>9</strong> (PWM) do Arduino.</li>
+                <li>Insira o código de programação utilizando os comandos <code>analogRead()</code>, <code>map()</code>
+                    e <code>analogWrite()</code> para controlar o brilho do LED.</li>
                 <li>Inicie a simulação e gire o potenciômetro para ver o brilho do LED variar em tempo real!</li>
             </ol>
-     </div>
-           
+        </div>
+
 
     </main>
-  <!-- Rodapé Completo -->
+    <!-- Rodapé Completo -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-col" style="max-width: 300px;">
                 <h4 class="footer-logo">
                     <img src="img/criartec-logo-transparente.png" alt="CRIARTEC">
                 </h4>
-                <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual, interativo e divertido através da robótica educacional.</p>
+                <p style="font-size: 14px; margin-top: 10px;">Transformando a lógica de programação em algo visual,
+                    interativo e divertido através da robótica educacional.</p>
             </div>
 
-             <!-- Coluna 2: Parceiros e logos -->
+            <!-- Coluna 2: Parceiros e logos -->
             <div class="footer-col">
                 <h4 style="color: #ffffff; margin-bottom: 5px;">IFTM Campus Uberlândia Centro</h4>
                 <!-- <p style="font-size: 13px; color: #b2bec3; margin-top: 5px;">GPETEC & Clube de Robótica CRIAR</p> -->
@@ -169,12 +175,14 @@
                 <h4>Recursos</h4>
                 <ul>
                     <li><a href="https://www.tinkercad.com/" target="_blank">Acessar Tinkercad</a></li>
-                    <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE" target="_blank">Download Arduino IDE</a></li>
+                    <li><a href="https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE"
+                            target="_blank">Download Arduino IDE</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Projeto CRIARTEC — Desenvolvido para o TCC de Sistemas para Internet (IFTM Campus Uberlândia Centro).</p>
+            <p>© 2026 Projeto CRIARTEC — Desenvolvido para o TCC de Sistemas para Internet (IFTM Campus Uberlândia
+                Centro).</p>
             <p>Coordenação: Clube de Robótica CRIAR & Grupo de Pesquisa GPETEC | <strong>Curso Gratuito</strong></p>
         </div>
     </footer>

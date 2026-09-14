@@ -1,4 +1,4 @@
-  /* ============================================================
+/* ============================================================
            SEU CSS ORIGINAL (mantido integralmente)
            ============================================================ */
   * {
@@ -318,17 +318,16 @@
   /* ===============================
            HERO SECTION
            =============================== */
-  .hero {
-      background: linear-gradient(135deg, var(--roxo-escuro) 0%, #2c2c54 100%);
-      color: var(--branco);
-      padding: 80px 5% 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-      min-height: 90vh;
-  }
-
+.hero {
+    background: linear-gradient(135deg, var(--roxo-escuro) 0%, #2c2c54 100%);
+    color: var(--branco);
+    padding: 100px 8% 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    min-height: 90vh;
+}
   .hero-text {
       flex: 1;
       max-width: 600px;
@@ -1009,6 +1008,41 @@
           padding: 0 !important;
           margin: 0 !important;
           list-style: none !important;
+          width: 100% !important;
+          position: relative !important;
+      }
+
+      /* CORREÇÃO DO DROPDOWN NO MODO MOBILE */
+      .dropdown {
+          position: static !important;
+      }
+
+      .dropdown-menu {
+          position: absolute !important;
+          top: 100% !important;
+          left: 5% !important;
+          right: 5% !important;
+          transform: translateY(8px) !important;
+          width: 90% !important;
+          min-width: unset !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+          background-color: #151530 !important;
+          border: 1px solid rgba(255, 255, 255, 0.1) !important;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7) !important;
+      }
+
+      .dropdown:hover .dropdown-menu,
+      .dropdown:focus-within .dropdown-menu,
+      .dropdown.active .dropdown-menu {
+          transform: translateY(0) !important;
+      }
+
+      .dropdown-menu a {
+          white-space: normal !important;
+          word-break: break-word !important;
+          font-size: 0.85rem !important;
+          padding: 10px 12px !important;
       }
 
       .hero {
@@ -1114,6 +1148,19 @@
 
   /* 3. Smartphones Pequenos (<= 480px) */
   @media (max-width: 480px) {
+      .dropdown-menu {
+          left: 3% !important;
+          right: 3% !important;
+          width: 94% !important;
+          padding: 6px !important;
+      }
+
+      .dropdown-menu a {
+          font-size: 0.8rem !important;
+          padding: 8px 10px !important;
+          gap: 8px !important;
+      }
+
       .hero-text h1 {
           font-size: 24px !important;
           line-height: 1.25 !important;
