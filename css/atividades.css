@@ -151,7 +151,37 @@ body {
     font-size: 36px;
     box-shadow: 0 8px 18px rgba(243, 156, 18, 0.25);
 }
+ .card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: white;
+      flex-shrink: 0;
+      overflow: hidden;
+  }
 
+  .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+  }
+
+  .led {
+      background-color: #f39c12;
+  }
+
+  .botao {
+      background-color: #2980b9;
+  }
+
+  .sensor {
+      background-color: #8e44ad;
+  }
 /* ===== ABAS ===== */
 .tabs {
     display: flex;
