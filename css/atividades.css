@@ -41,13 +41,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    line-height: 0;
-} */
-
 .logo img {
     display: block;
     width: 50px;
@@ -151,37 +144,43 @@ body {
     font-size: 36px;
     box-shadow: 0 8px 18px rgba(243, 156, 18, 0.25);
 }
- .card-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      color: white;
-      flex-shrink: 0;
-      overflow: hidden;
-  }
 
-  .card-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-  }
+/* ===== CARD ICON (CORRIGIDO PARA NÃO CORTAR IMAGENS) ===== */
+.card-icon {
+    width: auto;
+    min-width: 60px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: white;
+    flex-shrink: 0;
+    overflow: visible;
+    background-color: transparent !important;
+}
 
-  .led {
-      background-color: #f39c12;
-  }
+.card-icon img {
+    max-width: 95px;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
 
-  .botao {
-      background-color: #2980b9;
-  }
+.led {
+    background-color: #f39c12;
+}
 
-  .sensor {
-      background-color: #8e44ad;
-  }
+.botao {
+    background-color: #2980b9;
+}
+
+.sensor {
+    background-color: #8e44ad;
+}
+
 /* ===== ABAS ===== */
 .tabs {
     display: flex;
@@ -352,6 +351,10 @@ body {
     padding-bottom: 30px;
 }
 
+.footer-col {
+    text-align: left;
+}
+
 .footer-col h4 {
     color: var(--branco);
     margin-bottom: 15px;
@@ -376,24 +379,32 @@ body {
     color: var(--verde-principal);
 }
 
+/* Imagem da coluna do IFTM alinhada à esquerda no desktop */
+.footer-col img {
+    display: block;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: auto;
+}
+
 .footer-bottom {
     text-align: center;
     font-size: 14px;
 }
 
-/* ===== FOOTER LOGO (CORRIGIDO) ===== */
+/* Logo da coluna da marca */
 .footer-logo {
     display: flex;
     align-items: center;
-    justify-content: center;      /* centraliza a imagem dentro do flex */
-    margin: 0 auto 15px;          /* centraliza o próprio bloco */
+    justify-content: flex-start;
+    margin-bottom: 15px;
     width: 100%;
-    max-width: 200px;             /* limite em telas maiores */
+    max-width: 200px;
 }
 
 .footer-logo img {
     width: 170px;
-    max-width: 100%;              /* nunca ultrapassa o contêiner */
+    max-width: 100%;
     height: auto;
     object-fit: contain;
     transition: transform 0.2s ease;
@@ -474,9 +485,10 @@ body {
     .logo img {
         width: 50px;
         max-height: auto;
-        align-items: center;
+        margin: 0 auto;
     }
 
+    /* Centralização completa do rodapé na responsividade */
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -487,12 +499,18 @@ body {
     .footer-col {
         width: 100%;
         max-width: 400px;
-        margin: 0 auto;           /* centraliza cada coluna */
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .footer-col img {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .footer-logo {
         justify-content: center;
-        margin: 0 auto 15px;      /* centralização garantida */
+        margin: 0 auto 15px;
         max-width: 200px;
     }
 
