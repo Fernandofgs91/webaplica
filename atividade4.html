@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRIARTEC - Atividade 04: Potenciômetro</title>
     <!-- Ícones e Fontes -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compatibilidade com o motor do Edge/Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Ícones e Fontes -->
@@ -62,9 +62,10 @@
                 <p>Domine a leitura de sinais analógicos e o controle de intensidade luminosa (PWM) para variar o brilho
                     de um LED em tempo real.</p>
             </div>
-            <div class="card-icon sensor" style="background-color: transparent; padding: 0;">
+            <div class="card-icon sensor"
+                style="background-color: transparent; padding: 0; width: auto; height: auto; overflow: visible; border-radius: 0;">
                 <img src="img/potenciometro.jpg" alt="Potenciômetro com LED Arduino"
-                    style="width: 100px; height: auto; object-fit: cover; border-radius: 8px;">
+                    style="max-width: 80px; height: auto; object-fit: contain; display: block;">
             </div>
         </div>
 
@@ -153,7 +154,8 @@
                     do Arduino.</li>
                 <li>Conecte o <strong>catodo</strong> (perna negativa) do LED ao <strong>GND</strong> do Arduino.</li>
                 <li>Conecte o <strong>anodo</strong> (perna positiva) do LED através do resistor de 220Ω ao pino digital
-                    <strong>9</strong> (PWM) do Arduino.</li>
+                    <strong>9</strong> (PWM) do Arduino.
+                </li>
                 <li>Insira o código de programação utilizando os comandos <code>analogRead()</code>, <code>map()</code>
                     e <code>analogWrite()</code> para controlar o brilho do LED.</li>
                 <li>Inicie a simulação e gire o potenciômetro para ver o brilho do LED variar em tempo real!</li>
