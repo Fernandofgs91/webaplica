@@ -160,22 +160,22 @@
                     <strong>A0</strong> do Arduino.
                 </li>
                 <li>Conecte os fios de alimentação do micro servo motor: o fio <strong>Vermelho (VCC)</strong> ao
-                    <strong>5V</strong> e o fio <strong>Marrom/Preto (GND)</strong> ao <strong>GND</strong>[cite: 1].
+                    <strong>5V</strong> e o fio <strong>Marrom/Preto (GND)</strong> ao <strong>GND</strong>.
                 </li>
                 <li>Conecte o fio de sinal do servo (<strong>Laranja/Amarelo</strong>) ao pino digital
-                    <strong>7</strong> do Arduino[cite: 1].
+                    <strong>7</strong> do Arduino.
                 </li>
                 <li>No editor de código, utilize a biblioteca <code>#include &lt;Servo.h&gt;</code> e inicialize o servo
                     no <code>setup()</code> usando <code>servo_7.attach(7, 500, 2500)</code>[cite: 1].</li>
                 <li>No <code>loop()</code>, efetue a leitura analógica de A0 com <code>analogRead(A0)</code> e converta
                     o sinal usando a função de mapeamento
-                    <code>Angulo = map(analogRead(A0), 0, 1023, 0, 180);</code>[cite: 1].
+                    <code>Angulo = map(analogRead(A0), 0, 1023, 0, 180);</code>.
                 </li>
                 <li>Escreva a posição no motor através de <code>servo_7.write(Angulo);</code> e insira um
-                    <code>delay(50);</code> para estabilização do movimento[cite: 1].
+                    <code>delay(50);</code> para estabilização do movimento.
                 </li>
                 <li>Inicie a simulação, gire o potenciômetro e veja a haste do servo responder proporcionalmente entre
-                    0° e 180°.!</li>
+                    0° e 180°.</li>
             </ol>
         </div>
 
